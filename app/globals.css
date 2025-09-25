@@ -35,29 +35,7 @@ body {
   backdrop-filter: blur(8px);
 }
 
-/* Story card styles */
-.cards-section { z-index: 20; }
-.cards-grid { z-index: 21; }
-.story-card { min-height: 180px; }
-.card-visual { height: 90px; display:flex; align-items:center; justify-content:center; }
-.orbit { width: 72px; height: 72px; border-radius: 999px; display:flex; align-items:center; justify-content:center; position: relative; }
-.orbit .planet { width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #fff, #ddd 20%, #666 100%); box-shadow: 0 6px 16px rgba(255,255,255,0.06), 0 0 18px rgba(255,255,255,0.06) inset; }
-.orbit::before { content: ''; position:absolute; inset:0; border-radius:999px; border: 1px dashed rgba(255,255,255,0.08); transform: rotate(calc(var(--i) * 9deg)); }
-.story-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
-.story-card .card-cta { display:block; }
-
 /* small orbit animation */
 @keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .orbit { animation: orbit-spin 12s linear infinite; }
 .story-card:hover .orbit { animation-duration: 6s; }
-
-/* Story detail styles */
-.story-detail .detail-grid { align-items: start; }
-.story-detail .glass { padding: 18px; }
-.mini-visual { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 12px; }
-.mini-planet { box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 18px rgba(0,0,0,0.2) inset; }
-.prose h3 { color: white; }
-.prose p { color: rgba(255,255,255,0.9); }
-.prose blockquote { border-left: 3px solid rgba(255,255,255,0.08); }
-
-
