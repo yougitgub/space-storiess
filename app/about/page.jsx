@@ -1,20 +1,57 @@
 "use client";
-
+import SpaceScene from "@/components/SpaceScene";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+
+
+
+const team = [
+  {
+    name: "Youssef",
+    role: "Frontend Developer",
+    skills: ["React", "Next.js", "TailwindCSS"],
+  },
+  {
+    name: "Omar",
+    role: "Content Writer",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  {
+    name: "Omar",
+    role: "Content Writer",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  {
+    name: "Omar",
+    role: "Content Writer",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  {
+    name: "Omar",
+    role: "Content Writer",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  {
+    name: "Omar",
+    role: "Content Writer",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  
+];
 
 export default function AboutPage() {
   return (
-    <div className="relative min-h-screen mt-20 text-gray-200 overflow-hidden">
-        <NavBar></NavBar>
-     
+    <div className="relative min-h-screen  text-gray-200 mt-25">
+    <SpaceScene />
+      <NavBar />
 
-      {/* المحتوى */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-20">
+    
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-blue-400">
           About Us
         </h1>
 
-        {/* عن المسابقة */}
+       
         <section className="mb-12 bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-300 mb-4">
             🛰️ About the Competition
@@ -28,7 +65,7 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* عن الموقع */}
+       
         <section className="mb-12 bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
           <h2 className="text-2xl font-semibold text-blue-300 mb-4">
             🌌 About Stellar Minds Space
@@ -42,40 +79,47 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* عن الفريق */}
-        <section className="mb-12 bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-          <h2 className="text-2xl font-semibold text-blue-300 mb-4">
-            👨‍🚀 About the Team
+     
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold text-blue-300 mb-8 text-center">
+            👨‍🚀 Meet Our Team
           </h2>
-          <p className="leading-relaxed">
-            We are a group of passionate students and creators who love both{" "}
-            <strong>science and storytelling</strong>. Our team combines knowledge
-            of astronomy, design, and programming to bring these stories to life.
-            Together, we believe in the power of stories to inspire curiosity and
-            creativity.
-          </p>
+
+        
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform"
+              >
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-2xl font-bold text-white shadow-md">
+                  {member.name[0]}
+                </div>
+                <h3 className="text-xl font-semibold text-center text-blue-200">
+                  {member.name}
+                </h3>
+                <p className="text-center text-gray-300">{member.role}</p>
+                <div className="mt-4">
+                  <h4 className="text-sm font-semibold text-blue-300 mb-2">
+                    Skills:
+                  </h4>
+                  <ul className="text-sm space-y-1 text-gray-300">
+                    {member.skills.map((skill, i) => (
+                      <li
+                        key={i}
+                        className="px-2 py-1 bg-white/5 rounded-md inline-block mr-2"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
-
-      {/* ستايل النجوم */}
-      <style jsx>{`
-        .stars {
-          width: 100%;
-          height: 100%;
-          background: transparent url("https://www.script-tutorials.com/demos/360/images/stars.png")
-            repeat top center;
-          animation: moveStars 200s linear infinite;
-        }
-
-        @keyframes moveStars {
-          from {
-            background-position: 0 0;
-          }
-          to {
-            background-position: -10000px 5000px;
-          }
-        }
-      `}</style>
+      <Footer></Footer>
     </div>
   );
 }

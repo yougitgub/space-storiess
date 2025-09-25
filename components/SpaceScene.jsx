@@ -65,6 +65,8 @@ function MouseStars({ count = 2000, radius = 80 }) {
 
 export default function SpaceScene() {
   return (
+    <div className='fixed inset-0 z-0'>
+
     <Canvas style={{ height: '100vh', width: '100vw' }} >
       <ambientLight intensity={0.1} />
       <pointLight position={[10, 10, 10]} />
@@ -75,5 +77,6 @@ export default function SpaceScene() {
 
       <OrbitControls enableZoom={false} />
     </Canvas>
+    </div>
   );
 }
