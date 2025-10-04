@@ -39,3 +39,9 @@ body {
 @keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 .orbit { animation: orbit-spin 12s linear infinite; }
 .story-card:hover .orbit { animation-duration: 6s; }
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
