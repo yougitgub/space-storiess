@@ -6,7 +6,7 @@ export default function Page() {
 const [videoSrc,setVideoSrc] = useState('https://cdn.pixabay.com/video/2023/01/03/145151-786113457.mp4');
   setInterval(() => {
     setVideoSrc('https://cdn.pixabay.com/video/2021/10/05/90877-629483574.mp4');
-  }, 3000);
+  }, 5000);
 
 
   return (
