@@ -1,4 +1,18 @@
-It was a winter of sharp cold in northern Norway. Snow covered the land like an endless white page. The whole family gathered inside a small wooden cabin, and around the fireplace, the logs crackled warmly, filling the room with heat.
+"use client"
+import { useState, useEffect, useRef } from "react";
+import SpaceScene from "@/components/SpaceScene";
+import NavBar from "@/components/NavBar";
+
+export default function Page() {
+
+
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center relative overflow-x-hidden">
+      <NavBar />
+      <SpaceScene/>
+      <div className="fixed z-10 text-white  sm:max-w-fit  md:w-5/6 lg:max-w-3/5 overflow-y-scroll scrollbar-hide max-h-3/4 mt-30 bg-black/40 backdrop-blur-lg p-6 rounded-xl  text-center">
+        <p className="mx-auto text-2xl leading-15  w-150 text-center"> 
+          It was a winter of sharp cold in northern Norway. Snow covered the land like an endless white page. The whole family gathered inside a small wooden cabin, and around the fireplace, the logs crackled warmly, filling the room with heat.
 
 After dinner, they all went outside to glance at the night sky. But this night was different. Green and violet lights swirled above their heads, moving slowly like heavenly curtains breathing with the wind.
 
@@ -193,4 +207,9 @@ Layla looked at the glowing sky and whispered with a smile:
 The grandfather’s eyes sparkled:
 — “Exactly. The aurora is the perfect example that beauty can come with danger, and science is what allows us to understand and face it. Without curiosity and questions like yours, we’d never know the truth hidden behind those lights.”
 
-And as the children slowly drifted to sleep, the aurora kept dancing above the small cabin—an eternal blend of beauty and warning, a reminder that science is the only guardian between us and the secrets of the Sun.
+And as the children slowly drifted to sleep, the aurora kept dancing above the small cabin—an eternal blend of beauty and warning, a reminder that science is the only guardian between us and the secrets of the Sun.          
+        </p>
+      </div>
+    </div>
+  );
+}
