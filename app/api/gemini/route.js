@@ -32,7 +32,7 @@ export async function POST(req) {
             : `User: ${message}`,
         }],
       }],
-      // ✅ Use the correct name for model configuration parameters
+      // ✅ Use the correct name for model configuration parameter
       generationConfig: {
         temperature: 0.7,
         maxOutputTokens: 4096, // Use camelCase for official API parameters
