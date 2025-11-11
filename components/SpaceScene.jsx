@@ -65,7 +65,7 @@ function MouseStars({ count = 2000, radius = 80 }) {
 
 export default function SpaceScene() {
   return (
-    <div className='fixed inset-0 z-0'>
+    <div className='fixed inset-0 z-0' style={{zIndex:-1}}>
 
     <Canvas style={{ height: '100vh', width: '100vw' }} >
       <ambientLight intensity={0.1} />
