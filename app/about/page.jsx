@@ -7,33 +7,33 @@ import Footer from "@/components/Footer";
 
 const team = [
   {
-    name: "Youssef",
-    role: "Frontend Developer",
+    name: "Mohammed Gamal",
+    role: "Team Leader",
     skills: ["React", "Next.js", "TailwindCSS"],
   },
   {
-    name: "Omar",
+    name: "Abdallah Medhat",
+    role: "Video Editor",
+    skills: ["Creative Writing", "Science Communication"],
+  },
+  {
+    name: "Yousef Hussein",
     role: "Content Writer",
     skills: ["Creative Writing", "Science Communication"],
   },
   {
-    name: "Omar",
-    role: "Content Writer",
+    name: "Amira Subry",
+    role: "Reaserch",
     skills: ["Creative Writing", "Science Communication"],
   },
   {
-    name: "Omar",
-    role: "Content Writer",
+    name: "Norhan Rady",
+    role: "Presentation",
     skills: ["Creative Writing", "Science Communication"],
   },
   {
-    name: "Omar",
-    role: "Content Writer",
-    skills: ["Creative Writing", "Science Communication"],
-  },
-  {
-    name: "Omar",
-    role: "Content Writer",
+    name: "Khalil Abdelrahman",
+    role: "Front-End Developer",
     skills: ["Creative Writing", "Science Communication"],
   },
   
@@ -99,21 +99,7 @@ export default function AboutPage() {
                   {member.name}
                 </h3>
                 <p className="text-center text-gray-300">{member.role}</p>
-                <div className="mt-4">
-                  <h4 className="text-sm font-semibold text-blue-300 mb-2">
-                    Skills:
-                  </h4>
-                  <ul className="text-sm space-y-1 text-gray-300">
-                    {member.skills.map((skill, i) => (
-                      <li
-                        key={i}
-                        className="px-2 py-1 bg-white/5 rounded-md inline-block mr-2"
-                      >
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+               
               </div>
             ))}
           </div>
