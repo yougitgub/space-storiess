@@ -1,0 +1,63 @@
+/* Simple styles for the static clone */
+:root{
+  --bg:#020617;
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+  --accent: #7dd3fc;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, Roboto, system-ui, -apple-system, "Segoe UI", Helvetica, Arial;
+  background: radial-gradient(ellipse at center, #081028 0%, #020617 60%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+.nav{position:sticky;top:0;z-index:40;padding:.6rem 0}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{margin:0;font-size:1.25rem}
+.nav-links a{color:var(--accent);text-decoration:none}
+
+.glass{background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(8px);padding:.5rem 1rem;border-radius:10px}
+
+.hero{display:flex;align-items:center;justify-content:center;height:60vh}
+.hero-inner{text-align:center}
+.btn{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border-radius:8px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#021018;text-decoration:none;font-weight:600}
+
+.stories-page{padding:2rem 0}
+.stories-page h2{margin-bottom:1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:rgba(255,255,255,0.02);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);position:relative;overflow:hidden}
+.card h3{margin:.5rem 0}
+.card p{font-size:.95rem;color:#cfdff4}
+.card .read{display:inline-block;margin-top:.5rem;color:var(--accent);text-decoration:none}
+
+/* mini orbit style */
+.mini-orbit{width:86px;height:86px;border-radius:50%;margin-bottom:.6rem;position:relative;border:2px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center}
+.mini-orbit::after{content:"";position:absolute;width:80px;height:80px;border-radius:50%;border:1px dashed rgba(255,255,255,0.03);}
+.planet{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#fff 0%, #60a5fa 100%);box-shadow:0 0 8px rgba(125,211,252,0.6)}
+.planet-2{background:linear-gradient(135deg,#ffd27d,#ff7d7d)}
+.planet-3{background:linear-gradient(135deg,#b8ff7d,#7dd3fc)}
+.planet-4{background:linear-gradient(135deg,#d7b8ff,#7dd3fc)}
+
+.site-footer{padding:2rem 0;text-align:center;color:rgba(230,238,248,0.6)}
+
+/* responsive */
+@media (max-width:600px){.hero{height:50vh}.container{padding:.75rem}}
+
+/* Hero title for main page */
+.hero-title{font-size:clamp(2.4rem,6vw,4.8rem);margin:1rem 0;color:#dff3ff}
+.card-large{padding:2rem}
+
+/* Canvas starfield container */
+.space-canvas{position:fixed;inset:0;z-index:0;display:block}
+
+/* ensure page content sits above the canvas */
+header, main, footer{position:relative;z-index:10}
+
+/* small hover effect for cards (used by script) */
+.card.hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(5,9,20,0.6);transition:transform .2s ease}
+

@@ -1,140 +1,215 @@
 "use client"
-import SpaceScene from '@/components/SpaceScene';
-import NavBar from '@/components/NavBar';
-import { useState } from 'react'; 
+import { useState, useEffect, useRef } from "react";
+import SpaceScene from "@/components/SpaceScene";
+import NavBar from "@/components/NavBar";
+
 export default function Page() {
-const [videoSrc,setVideoSrc] = useState('https://cdn.pixabay.com/video/2023/01/03/145151-786113457.mp4');
-  setInterval(() => {
-    setVideoSrc('https://cdn.pixabay.com/video/2021/10/05/90877-629483574.mp4');
-  }, 5000);
 
 
   return (
-    <div className=" min-h-screen text-center flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen flex flex-col justify-center items-center relative overflow-x-hidden">
       <NavBar />
-      <video
-        autoPlay
-        loop
-        muted
-        className="fixed w-auto min-w-full max-h-screen min-h-screen max-w-none object-cover"
-        src={videoSrc}
-        style={{ zIndex: 0 }} 
-      />
-      <div className=" absolute w-2/3 overflow-y-auto scrollbar-hide h-5/6 bg-black/30 backdrop-blur-md rounded-3xl p-6 z-10 top-30 text-center flex flex-col justify-center text-white px-4">
-        <h2 className="text-4xl md:text-6xl font-bold mt-500  ">Welcome to Stellar Story</h2>
-        <p className="text-5xl relative md:text-2xl  mx-3 mt-10 text-center leading-15" >كان الشتاء باردًا درجة ما في شمال النرويج، والثلج يكسو البيئة كصفحة بيضاء طويلة بلا نهاية. اجتمعت العائلة جميعهم في كوخ خشبي قصير، وحول المدفأة ذهبت الحطب لتدفئ المكان.
+      <SpaceScene/>
+      <div className="fixed z-10 text-white  sm:max-w-fit  md:w-5/6 lg:max-w-3/5 overflow-y-scroll scrollbar-hide max-h-3/4 mt-30 bg-black/40 backdrop-blur-lg p-6 rounded-xl  text-center">
+        <p className="mx-auto text-2xl leading-15  w-150 text-center"> 
+          It was a winter of sharp cold in northern Norway. Snow covered the land like an endless white page. The whole family gathered inside a small wooden cabin, and around the fireplace, the logs crackled warmly, filling the room with heat.
 
-وبعد العشاء، خرج الجميع ليلًا ليلقوا نظرة على السماء. كانت ليلة استثنائية… ألوان خضراء وبنفسجية تتمايل فوق رؤوسهم، كأن الستائر السماوية تتحرك ببطء مع أنفاس الرياح.
+After dinner, they all went outside to glance at the night sky. But this night was different. Green and violet lights swirled above their heads, moving slowly like heavenly curtains breathing with the wind.
 
-"واو!" صرخت سلمى، أخت ليلى الصغيرة.
-"شوفوا الألوان! أخضر… بنفسجي… وفيه أحمر كمان!"
+“Wow!” shouted Salma, Layla’s little sister.
+“Look at the colors! Green… violet… and even red!”
 
-اقترب أحمد، ابن عمهم ذو الـ 10 سنوات، وهو يمسك بيد جده:
-– “جدو، هو ده اللي بيسموه الشفق القطبي؟”
+Ahmed, their 10-year-old cousin, held his grandfather’s hand tightly and asked:
+— “Grandpa, is this what they call the Northern Lights?”
 
-ابتسم الجد، وهو يرفع رأسه نحو السماء كأنه يقرأ كتابًا مألوفًا:
-– “أيوه يا أحمد. لكن عايزين تعرفوا حاجة مهمة؟… الشفق ده مش مجرد ألوان حلوة. دي رسالة من الشمس نفسها!”
+The old man smiled, lifting his head to the sky as though reading from a familiar book:
+— “Yes, Ahmed. But do you know something important? These lights are not just pretty colors. They are a message… sent from the Sun itself!”
 
-الأطفال التفوا حوله بسرعة، أصواتهم متداخلة وأسئلتهم تتسابق. ليلى تقدمت خطوة وسألت:
-– “رسالة من الشمس؟ إزاي يعني؟”
+The children quickly gathered around him, their voices overlapping with endless questions. Layla stepped forward curiously:
+— “A message from the Sun? What do you mean?”
 
-جلس الجد على مقعد خشبي قديم، وصوته امتزج بفرقعة الحطب في المدفأة:
-– "الشمس يا ولاد مش كرة ساكنة، دي نجم بيغلي. كل دقيقة بيحصل فيها انفجارات اسمها Solar Flares، وساعات بتطلع سحب ضخمة من البلازما اسمها Coronal Mass Ejections. كل ده بيسافر لحد عندنا، بسرعة ممكن توصل لمليون ميل في الساعة!"
+The grandfather sat on an old wooden chair, his voice blending with the crackle of the fire:
+— “The Sun isn’t a calm ball in the sky. It’s a boiling star. Every minute, massive explosions erupt—called Solar Flares. And sometimes, the Sun throws out giant clouds of plasma, called Coronal Mass Ejections. All of this energy travels through space… reaching us at speeds of nearly a million miles per hour!”
 
-ضحك كريم، أصغر واحد بينهم، وقال بعفوية:
-– "مليون ميل في الساعة؟ أسرع من عربيات السباق 100 مرة!"
+Kareem, the youngest, giggled and said innocently:
+— “A million miles an hour? That’s like 100 times faster than racing cars!”
 
-انفجروا جميعًا في الضحك، لكن الجد رفع حاجبيه بجدية وهو يقول:
-– "بالضبط! ودي اللي بنسميها الطقس الفضائي – Space Weather. أحيانًا بيكون هادي، وأحيانًا بيبقى قوي لدرجة يغيّر حياتنا."
+They all laughed, but the grandfather raised his brows seriously:
+— “Exactly! And that’s what we call Space Weather. Sometimes it’s calm, but sometimes it’s powerful enough to change our lives.”
 
-رفعت سلمى ذراعها مثل الطالبة في الفصل:
-– "طب والألوان اللي في السما… إيه سرها؟"
+Salma raised her hand like a schoolgirl:
+— “But the colors in the sky… what makes them?”
 
-الجد ابتسم وهو يشير للسماء:
-– "لما الجسيمات المشحونة من الشمس توصل للأرض، الغلاف المغناطيسي يوجّهها ناحيتين: القطب الشمالي والجنوبي. هناك، بتخبط في ذرات الأكسجين والنيتروجين. الأكسجين بيدينا أخضر في الطبقات المنخفضة، وأحمر في الطبقات العالية. النيتروجين ساعات يدي بنفسجي، وساعات أزرق."
+The grandfather smiled, pointing upward:
+— “When charged particles from the Sun reach Earth, our magnetic field guides them toward the poles—north and south. There, they collide with oxygen and nitrogen atoms. Oxygen at lower altitudes glows green, at higher altitudes it glows rare red. Nitrogen sometimes shines violet or blue.”
 
-📊 (بيانات ناسا):
+📊 (NASA Data):
 
-الأكسجين على ارتفاع 100–150 كم → أخضر.
+Oxygen at 100–150 km → Green
 
-الأكسجين على 200–300 كم → أحمر نادر.
+Oxygen at 200–300 km → Rare red
 
-النيتروجين → بنفسجي/أزرق.
+Nitrogen → Violet/Blue
 
 
-أحمد فتح عينيه بإعجاب وقال:
-– "يعني كل لون بيحكي قصة؟!"
+Ahmed’s eyes widened with wonder:
+— “So every color tells a story?!”
 
-ضحك الجد وربّت على كتفه:
-– "بالضبط… كل لون في السما دليل على نوع الغاز وارتفاعه. وكأن الأرض بترسم لوحة بألوان الشمس."
+The grandfather chuckled, patting his shoulder:
+— “Exactly… every color is a clue about the gas and its altitude. It’s like Earth painting with the Sun’s light.”
 
-سادت لحظة صمت قصيرة، والكل يرفع بصره نحو السماء. لكن ليلى، بنبرة فضول ممزوج بقلق، سألت:
-ــ "طيب يا جدو… هو اللي بيحصل فوق ده، ممكن يأثر علينا هنا تحت؟ يعني على بيوتنا وحياتنا؟"
+For a moment, silence fell. Everyone gazed at the sky in awe. But Layla, her voice tinged with worry, asked:
+— “Grandpa… what’s happening up there… could it affect us down here? Our homes, our lives?”
 
-الجد شد الكرسي وقرب منهم وقال بصوت منخفض كأنه يحكي سرًا:
-ــ "تعرفوا… في يوم من الأيام، الشمس بعتت عاصفة قوية جدًا للأرض. فجأة في بلد بعيدة اسمها كندا، النور كله انطفى. محطات الكهرباء تعطّلت، والمستشفيات والبيوت غرقوا في الظلام. كل ده حصل مش بسبب حرب… لكن بسبب الطقس الفضائي."
+The old man pulled his chair closer, lowering his voice as though sharing a secret:
+— “You know… once, the Sun sent a storm so powerful that in a faraway country—Canada—the lights went out completely. Power stations failed, and hospitals and homes were thrown into darkness. It wasn’t a war. It was space weather.”
 
-الأطفال تبادلوا نظرات مذهولة، وأحمد قال وهو يهز رأسه:
-ــ "إزاي يا جدو؟ يعني الشمس تبعت حاجة تمشي ملايين الكيلومترات وتطفي نورنا؟"
+The children exchanged stunned looks. Ahmed shook his head:
+— “How? The Sun sends something across millions of kilometers… and it can turn off our lights?”
 
-ضحك الجد وقال:
-ــ "أيوة يا بطل! الجسيمات اللي بتطلع من الشمس ساعات بتدخل جوه شبكات الكهرباء وتعمل تيارات ضخمة جدًا… زي صدمة كهربائية هائلة. الشبكات ساعات ما تستحملش."
+The grandfather laughed softly:
+— “Yes, my boy! Those solar particles can sometimes enter power grids, creating enormous currents—like a massive electric shock. And sometimes, the networks can’t handle it.”
 
-سلمى قاطعت بفضول:
-ــ "طيب والأقمار الصناعية اللي فوق دي؟ اللي بتصور لنا صور الأرض!"
+Salma leaned in curiously:
+— “And what about satellites up there—the ones that take pictures of Earth?”
 
-الجد أومأ برأسه:
-ــ "هاه… دي أكتر حاجة بتتأثر. الأقمار الصناعية بتتعرض لهجوم مباشر من العواصف الشمسية. لو اتعطّلت، إحنا مش هنعرف نستخدم GPS، ولا هيبقى في إنترنت، ولا اتصالات. تخيلوا العالم من غير إنترنت يوم واحد بس!"
+The grandfather nodded:
+— “Ah… they’re the most vulnerable. Solar storms hit satellites directly. If they fail, we lose GPS, the internet, and communications. Imagine the world without the internet for just one day!”
 
-ضحك الأطفال جميعًا، لكن ليلى علقت بجدية:
-ــ "دي كارثة يا جدو!"
+The kids burst into laughter, but Layla frowned seriously:
+— “That would be a disaster, Grandpa!”
 
-الجد ابتسم وقال:
-ــ "وفي حاجة كمان… الطيارات اللي بتعدي فوق القطب الشمالي ساعات بتغير مسارها، لأن الإشعاع بيبقى عالي جدًا هناك، وممكن يضر الركاب. حتى المكالمات الراديوية اللي بيستخدمها الطيارون ساعات بتتقطع."
+The grandfather smiled:
+— “And there’s more. Airplanes flying over the North Pole sometimes change their routes, because the radiation there becomes dangerously high, risking the passengers. Even radio signals used by pilots sometimes get cut off.”
 
-ثم توقف قليلًا، وكأنه يريد شد انتباههم أكثر، وأكمل:
-ــ "بس الأخطر من كل ده… رواد الفضاء. الناس اللي عايشة فوق في محطة الفضاء بيتعرضوا لإشعاع خطير جدًا وقت العواصف. عشان كده ناسا بتدي تحذيرات وبتخليهم يدخلوا مناطق محمية جوه المركبة."
+He paused briefly, drawing them closer with suspense:
+— “But the most at risk… are astronauts. Those living on the space station are exposed to dangerous radiation during solar storms. That’s why NASA issues alerts, guiding them into shielded areas inside the spacecraft.”
 
-ارتسمت على وجوه الأطفال ملامح مختلفة؛ بعضهم خائف، وبعضهم مأخوذ بالخيال. سلمى همست بصوت خافت:
-ــ "يعني اللي بيحصل فوق مش مجرد ألوان جميلة… ده ممكن يغيّر حياتنا على الأرض."
+The children’s faces reflected fear, awe, and imagination. Salma whispered softly:
+— “So these lights… aren’t just beautiful. They could change our lives down here.”
 
-الجد نظر إليها بحنان وربّت على كتفها:
-ــ "بالظبط. علشان كده العلماء مش بس بيتفرجوا على السما… هما بيشتغلوا ليل ونهار عشان يحمونا من أسرار الشمس."
+The grandfather gazed at her kindly, patting her shoulder:
+— “Exactly. That’s why scientists don’t just admire the sky… they work day and night to protect us from the Sun’s secrets.”
 
-رفع أحمد يده بحماس، وكأنه في درس علوم وقال:
-ــ "طيب يا جدو… هو كل العواصف اللي بتطلع من الشمس بتكون عادية كده ولا في عواصف ضخمة بجد؟"
+Ahmed raised his hand excitedly, like in a science class:
+— “Grandpa, are all solar storms like this? Or are there really huge ones?”
 
-الجد تنهد وأخذ نفسًا طويلًا وقال بصوت فيه رهبة:
-ــ "لا يا بطل… في عواصف بتكون عادية ومش بنحس بيها، لكن في أوقات… الشمس بتغضب! وتطلق انفجارات هائلة. العلماء بيسموها عواصف شمسية قوية أو Solar Storms."
+The grandfather sighed deeply, his voice lowering with weight:
+— “Not all storms are the same. Some are small and harmless. But sometimes… the Sun gets angry. And when it does, it unleashes massive storms. Scientists call them Strong Solar Storms.”
 
-ليلى اقتربت وقالت بفضول:
-ــ "زي إيه يعني؟"
+Layla stepped closer, eyes filled with curiosity:
+— “Like what?”
 
-الجد حرك يده في الهواء كأنه يرسم المشهد وقال:
-ــ "هقولكم على قصة حصلت زمان… في سنة 1859 حصلت أقوى عاصفة شمسية مسجلة في التاريخ. اسمها حدث كارينغتون. وقتها، خطوط التلغراف — اللي كانت أهم وسيلة اتصال — ولّعت نار! الشرر طار من الأسلاك، وبعض الأجهزة اتدمرت. الناس كانوا شايفين الشفق القطبي بألوانه المبهرة لدرجة إنه ظهر في بلاد ما كانش يظهر فيها قبل كده، زي المكسيك والهند."
+The grandfather waved his hand in the air, painting the image:
+— “Let me tell you a story from long ago… In 1859, the strongest solar storm in recorded history happened. It’s called the Carrington Event. Telegraph wires—the lifeline of communication at the time—caught fire! Sparks flew from the lines, and some machines burned out. People saw the aurora in places it had never appeared before—Mexico, India…”
 
-الأطفال شهقوا بدهشة:
-ــ "خطوط التلغراف ولعت؟!!"
+The children gasped:
+— “Telegraph wires on fire?!!”
 
-الجد أومأ مؤكدًا:
-ــ "أيوة. وده مثال قديم. لكن حتى قريب جدًا، في مايو 2024، حصلت عاصفة قوية جدًا من الدرجة G5. كان في انفجار شمسي اسمه X8.7 flare — ده من أقوى الدرجات اللي ممكن تحصل. العاصفة دي خلت الشفق القطبي يظهر في بلاد غريبة زي تكساس في أمريكا، وحتى في بعض بلاد أوروبا اللي ما بتشوفوش أبدًا!"
+The old man nodded:
+— “Yes. And that’s an old story. But even recently—in May 2024—a powerful G5 storm struck. It came from a solar flare called X8.7—one of the strongest possible. That storm made auroras visible in strange places—like Texas in the U.S., and even parts of Europe that never see them!”
 
-أحمد قفز بحماس وقال:
-ــ "يعني ممكن نشوف الشفق في أي مكان لو الشمس غضبت؟"
+Ahmed jumped with excitement:
+— “So if the Sun gets angry, we could see auroras anywhere?!”
 
-ضحك الجد وقال:
-ــ "بالظبط. بس المشكلة مش في المنظر… المشكلة في اللي بييجي معاه. لما العواصف بتكون قوية، ممكن تعطل الأقمار الصناعية، وتبوّظ الكهرباء، وتلخبط أنظمة الملاحة."
+The grandfather chuckled:
+— “Yes… but the problem isn’t the view. It’s what comes with it. Strong storms can disrupt satellites, damage electricity grids, and confuse navigation systems.”
 
-ليلى رفعت حاجبيها وقالت بجدية:
-ــ "يعني لو حصلت دلوقتي… ممكن الدنيا كلها تطفي؟"
+Layla raised her brows seriously:
+— “So if one happened now… the whole world could go dark?”
 
-الجد هز رأسه ببطء:
-ــ "العلماء بيقولوا إن ده احتمال مش بعيد. ولو حصل عاصفة أقوى من كارينغتون في الزمن ده، ممكن الإنترنت العالمي يتوقف أيام أو أسابيع. تخيلوا كده حياتنا من غير نت… من غير اتصالات… من غير GPS. العالم كله هيتلخبط."
+The grandfather nodded slowly:
+— “Scientists warn it’s possible. If a storm stronger than Carrington hit today, global internet could collapse for days or even weeks. Imagine life without the internet… without communications… without GPS. The world would be thrown into chaos.”
 
-ساد صمت ثقيل، وكأن الأطفال جميعًا يتخيلون الكوكب في ظلام مفاجئ. وبينما ارتجفت النار في المدفأة، قال الجد وهو يرفع بصره نحو السماء:
-ــ "علشان كده دراسة الطقس الفضائي مش رفاهية… دي ضرورة. العواصف القوية دي ممكن تغيّر شكل حياتنا في لحظة واحدة."</p>
+A heavy silence fell. The children imagined the planet plunged into sudden darkness. As the fire flickered, the grandfather lifted his gaze to the sky:
+— “That’s why studying space weather isn’t a luxury… it’s a necessity. These storms can change the course of life in an instant.”
+
+A cold breeze swept through, and the children huddled closer. The old man’s eyes glistened as he whispered:
+“See this beauty? Behind it lies incredible power… power born from the Sun itself.”
+
+The kids exchanged puzzled looks, until one little girl asked softly:
+— “What makes the lights so strong, Grandpa?”
+
+He smiled:
+— “It’s because of massive solar storms. The Sun doesn’t only send light and heat. Sometimes, it explodes and hurls enormous clouds of charged particles—Coronal Mass Ejections, or CMEs. When they reach Earth, they shake the magnetic field violently. That’s when the aurora becomes brighter, stronger, and reaches far beyond the poles.”
+
+The children gasped, and the older boy asked seriously:
+— “But isn’t that dangerous?”
+
+The grandfather nodded:
+— “Exactly. The more beautiful the aurora, the stronger the storm behind it. These storms can damage satellites, shut down GPS, and even overload power grids. In 1989, Canada experienced a massive blackout for hours… all caused by a solar storm.”
+
+The children gasped again, finally realizing the sky wasn’t just beauty—it carried danger too.
+
+The grandfather smiled, seeing their wonder and fear, and added:
+— “That’s why studying solar storms is so important. NASA scientists monitor the Sun constantly, tracking every eruption and calculating its speed. This way, they can warn the world before danger strikes.”
+
+He polished his glasses, then leaned forward, his voice calm but heavy:
+— “Children… solar storms are not just a pretty sight. Their impact on Earth is enormous.”
+
+One of the girls raised her brows:
+— “Like how? Like rain and lightning?”
+
+The grandfather chuckled gently:
+— “Not exactly. But they affect the things we use every day. Satellites that give us internet and GPS can be scrambled or shut down. Planes may be rerouted to protect passengers. Power grids can fail, as in the 1989 blackout. And astronauts face the highest risk—exposed to deadly radiation in space.”
+
+The kids exchanged nervous glances. For the first time, they felt that the sky was not just stars and colors, but secrets and hidden forces.
+
+The old man clasped his hands with a reassuring smile:
+— “But don’t be afraid, my dears. There are scientists working night and day to protect us. Do you know who?”
+
+All the children shouted together:
+— “NASA!”
+
+The grandfather laughed:
+— “Exactly! NASA is like Earth’s guardian. They have satellites—like DSCOVR—that constantly watch the Sun. These satellites capture solar explosions and send data back immediately.”
+
+Salma’s eyes sparkled:
+— “And what do they do with that data?”
+
+The grandfather leaned forward:
+— “They analyze it, just like a doctor reading X-rays. If they see a storm heading toward Earth, they send warnings to governments, airlines, and power companies. Planes change their routes early, power grids prepare, and astronauts move to safe zones.”
+
+Ahmed exclaimed:
+— “So NASA is like a shield for Earth?”
+
+The old man pointed upward:
+— “Yes. Without monitoring, we’d never know what the Sun sends our way. But now we can predict, prepare, and reduce the damage. And the aurora you see? It’s not just a natural show—it’s a warning light. Scientists call it the ‘language of the sky’—a message of the Sun’s power.”
+
+The children stared in awe, realizing the lights were not only beauty… but science and protection too.
+
+After a pause, little Layla whispered:
+— “So these colors… they’re not just decoration?”
+
+The grandfather nodded slowly:
+— “Exactly, Layla. The aurora is like a masterpiece, but also a warning. The brighter the colors, the stronger the solar storm behind them. The aurora is nature’s alarm bell, telling scientists: a storm has arrived.”
+
+Salma giggled:
+— “So the aurora is both beautiful and a warning!”
+
+The old man chuckled:
+— “Yes, it’s magic and science combined. Every time we see it, we must remember—it’s not only a sky painting… it’s a sign of the Sun’s immense power.”
+
+The children fell silent, gazing at the lights as though reading a glowing message. The air was filled with awe—beauty mixed with warning.
+
+Later, as they sat again by the fire, the grandfather spoke softly but firmly:
+— “You know, tonight wasn’t only about beauty. We learned the Sun is not just warmth and light, but a force of nature called Space Weather. A force that can change life in a single moment.”
+
+Ahmed frowned:
+— “So should we be afraid of it, Grandpa?”
+
+The old man smiled warmly:
+— “Not afraid… but aware. Science is the key. NASA and scientists around the world study space weather day and night, predicting storms and giving warnings. That’s what keeps us safe.”
+
+Layla looked at the glowing sky and whispered with a smile:
+— “So every time we see the aurora, it’s both a warning… and a gift from nature.”
+
+The grandfather’s eyes sparkled:
+— “Exactly. The aurora is the perfect example that beauty can come with danger, and science is what allows us to understand and face it. Without curiosity and questions like yours, we’d never know the truth hidden behind those lights.”
+
+And as the children slowly drifted to sleep, the aurora kept dancing above the small cabin—an eternal blend of beauty and warning, a reminder that science is the only guardian between us and the secrets of the Sun.          
+        </p>
       </div>
-      {/* <SpaceScene /> */}
     </div>
   );
 }
