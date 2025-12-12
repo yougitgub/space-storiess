@@ -1,34 +1,49 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
   const containerRef = useRef(null);
   const leftPageRef = useRef(null);
   const measureRef = useRef(null);
+  const audioRef = useRef(null);
 
   const [pages, setPages] = useState([""]);
   const [pageIndex, setPageIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState(null); // 'next' | 'prev'
   const [pageSize, setPageSize] = useState({ width: 520, height: 560 });
-  const FLIP_DURATION = 1100; // ms – slightly longer for realism
+
+  const FLIP_DURATION = 1.2; // Seconds for Framer Motion
+
+  useEffect(() => {
+    // Initialize audio object
+    audioRef.current = new Audio("https://cdn.pixabay.com/audio/2024/09/26/11/49/page-turning-249567_1280.mp3");
+    audioRef.current.volume = 0.5;
+  }, []);
+
+  const playFlipSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch((e) => console.log("Audio play failed", e));
+    }
+  };
 
   const paginate = () => {
     const el = measureRef.current;
-    const leftEl = leftPageRef.current;
-    if (!el || !leftEl) return;
-    const style = window.getComputedStyle(leftEl);
-    const paddingTop = parseFloat(style.paddingTop || 28);
-    const paddingBottom = parseFloat(style.paddingBottom || 28);
-    const paddingLeft = parseFloat(style.paddingLeft || 28);
-    const paddingRight = parseFloat(style.paddingRight || 28);
-    const width = Math.max(200, leftEl.clientWidth - paddingLeft - paddingRight);
-    const height = Math.max(180, leftEl.clientHeight - paddingTop - paddingBottom);
-    setPageSize({ width, height });
+    if (!el) return;
+
+    // Default size if leftPageRef not ready
+    const width = 520;
+    const height = 560;
+
+    // If we have ref, verify size, but for SSR/initial render use defaults to avoid jitter
+    // We can rely on fixed size for the book container style
 
     if (!storyText) {
-      setPages([""]);
+      setPages(["Start your journey..."]);
       setPageIndex(0);
       return;
     }
@@ -61,9 +76,6 @@ export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
 
   useLayoutEffect(() => {
     paginate();
-    const onResize = () => paginate();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storyText]);
 
@@ -81,229 +93,225 @@ export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
 
   function handleNextFlip() {
     if (isFlipping || pageIndex >= total - 1) return;
+    playFlipSound();
     setFlipDirection("next");
     setIsFlipping(true);
-    setTimeout(() => setPageIndex((p) => Math.min(p + 1, total - 1)), FLIP_DURATION / 2);
-    setTimeout(() => {
-      setIsFlipping(false);
-      setFlipDirection(null);
-    }, FLIP_DURATION);
+    // Framer motion onAnimationComplete will handle state update.
   }
 
   function handlePrevFlip() {
     if (isFlipping || pageIndex <= 0) return;
+    playFlipSound();
     setFlipDirection("prev");
     setIsFlipping(true);
-    setTimeout(() => setPageIndex((p) => Math.max(p - 1, 0)), FLIP_DURATION / 2);
-    setTimeout(() => {
-      setIsFlipping(false);
-      setFlipDirection(null);
-    }, FLIP_DURATION);
   }
 
-  const rightImage = images[pageIndex % images.length] || images[0];
-  const nextRightImage = images[(pageIndex + 1) % images.length] || rightImage;
-  const prevLeftText = pages[Math.max(0, pageIndex - 1)] || pages[0] || "";
+  const onFlipComplete = () => {
+    if (flipDirection === "next") {
+      setPageIndex((p) => Math.min(p + 1, total - 1));
+    } else {
+      setPageIndex((p) => Math.max(p - 1, 0));
+    }
+    setIsFlipping(false);
+    setFlipDirection(null);
+  };
+
+  // --- CONTENT HELPERS ---
+  const getText = (idx) => pages[idx] || "";
+  const formatText = (txt) => txt.replace(/\n/g, "<br/>");
+  const getImage = (idx) => images[idx % images.length] || images[0];
+
+  // Logic matches the CSS version but adapted for React renders
+  let baseLeftContent = getText(pageIndex);
+  let baseRightContent = getImage(pageIndex);
+  let flipperFront = null;
+  let flipperBack = null;
+
+  // Animation Values
+  let initialRotation = 0;
+  let targetRotation = 0;
+
+  if (isFlipping) {
+    if (flipDirection === "next") {
+      baseLeftContent = getText(pageIndex); // Stays until covered
+      baseRightContent = getImage(pageIndex + 1); // Revealed
+
+      flipperFront = getImage(pageIndex); // Lifting
+      flipperBack = getText(pageIndex + 1); // Landing
+
+      initialRotation = 0;
+      targetRotation = -180;
+    } else {
+      baseLeftContent = getText(pageIndex - 1); // Revealed
+      baseRightContent = getImage(pageIndex); // Stays until covered
+
+      flipperFront = getImage(pageIndex - 1); // Landing
+      flipperBack = getText(pageIndex); // Lifting
+
+      initialRotation = -180;
+      targetRotation = 0;
+    }
+  }
 
   return (
-    <div ref={containerRef} className="book-reader-container">
-      <style jsx>{`
-        .book-reader-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 18px;
-          padding: 24px;
-        }
-        .book {
-          display: flex;
-          gap: 18px;
-          perspective: 1600px;
-        }
-        .page {
-          width: 520px;
-          min-height: 560px;
-          border-radius: 10px;
-          position: relative;
-          overflow: hidden;
-          transform-style: preserve-3d;
-          box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
-          border: 1px solid rgba(255, 255, 255, 0.04);
+    <div ref={containerRef} className="book-reader-container w-full flex flex-col items-center">
+      <style jsx global>{`
+        .perspective-container {
+          perspective: 2000px;
         }
 
-        .page-content {
-          font-family: Georgia, "Times New Roman", serif;
-          color: #e7f2ff;
-          line-height: 1.7;
-          font-size: 1rem;
-          padding: 28px;
+        /* Page/Card Styles */
+        .book-page-layer {
+          width: 50%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          overflow: hidden;
+          background: linear-gradient(to right, #1e293b, #0f172a);
+          border: 1px solid rgba(255,255,255,0.1);
+          box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
-        .page img {
+        .page-left {
+            left: 0;
+            border-radius: 12px 0 0 12px;
+            transform-origin: right top;
+        }
+        .page-right {
+            right: 0;
+            border-radius: 0 12px 12px 0;
+            transform-origin: left top;
+        }
+
+        /* Text Content Style */
+        .page-text-content {
+          padding: 2rem;
+          font-family: var(--font-serif), serif;
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: #e2e8f0;
+          height: 100%;
+          overflow-y: auto;
+        }
+        /* Custom Scrollbar for text */
+        .page-text-content::-webkit-scrollbar { width: 6px; }
+        .page-text-content::-webkit-scrollbar-thumb { background: #475569; border-radius:3px;}
+
+        /* Image Content Style */
+        .page-image-content {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
 
-        /* --- REALISTIC FLIP --- */
-        .flip-page {
+        /* Flipper Face Styles */
+        .flipper-face {
           position: absolute;
           width: 100%;
           height: 100%;
-          transform-origin: left center;
-          backface-visibility: hidden;
-          transition: transform ${FLIP_DURATION}ms cubic-bezier(0.45, 0.02, 0.55, 0.95),
-            box-shadow ${FLIP_DURATION}ms ease;
-          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+          backface-visibility: hidden; /* Critical for 3D */
+          -webkit-backface-visibility: hidden;
+          border-radius: 0 12px 12px 0; /* Front shape */
+          overflow: hidden;
+          background: #0f172a;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        .page.right .flip-page {
-          transform-origin: left center;
+        .flipper-front {
+          /* Default 0 deg */
+          z-index: 2;
         }
-        .page.left .flip-page {
-          transform-origin: right center;
-        }
-
-        .page.right.flip-next .flip-page {
-          animation: flipNext ${FLIP_DURATION}ms forwards ease-in-out;
-        }
-        .page.left.flip-prev .flip-page {
-          animation: flipPrev ${FLIP_DURATION}ms forwards ease-in-out;
-        }
-
-        @keyframes flipNext {
-          0% {
-            transform: rotateY(0deg);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          }
-          30% {
-            box-shadow: -40px 0 80px rgba(0, 0, 0, 0.4);
-          }
-          50% {
-            transform: rotateY(-90deg);
-            box-shadow: -60px 0 100px rgba(0, 0, 0, 0.5);
-          }
-          70% {
-            box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
-          }
-          100% {
-            transform: rotateY(-180deg);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          }
-        }
-
-        @keyframes flipPrev {
-          0% {
-            transform: rotateY(0deg);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          }
-          30% {
-            box-shadow: 40px 0 80px rgba(0, 0, 0, 0.4);
-          }
-          50% {
-            transform: rotateY(90deg);
-            box-shadow: 60px 0 100px rgba(0, 0, 0, 0.5);
-          }
-          70% {
-            box-shadow: 20px 0 40px rgba(0, 0, 0, 0.3);
-          }
-          100% {
-            transform: rotateY(180deg);
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          }
-        }
-
-        .controls {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-        .btn {
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          color: #dff3ff;
-          padding: 10px 14px;
-          border-radius: 8px;
-          cursor: pointer;
-        }
-        .btn:disabled {
-          opacity: 0.45;
-          cursor: default;
-        }
-        .page-meta {
-          color: rgba(223, 243, 255, 0.8);
-          font-size: 0.9rem;
-        }
-
-        @media (max-width: 1180px) {
-          .book {
-            flex-direction: column;
-          }
-          .page {
-            width: 92vw;
-            min-height: 420px;
-          }
+        .flipper-back {
+          transform: rotateY(180deg);
+          border-radius: 12px 0 0 12px; /* Back shape (becomes left page) */
+          z-index: 1;
         }
       `}</style>
 
-      <div
-        ref={measureRef}
-        style={{
-          position: "absolute",
-          left: -9999,
-          top: 0,
-          width: pageSize.width + "px",
-          padding: 28,
-          visibility: "hidden",
-          fontFamily: "Georgia, 'Times New Roman', serif",
-          lineHeight: 1.7,
-          fontSize: "1rem",
-          whiteSpace: "normal",
-        }}
-      />
+      {/* Hidden Measure Div */}
+      <div ref={measureRef} style={{ position: "absolute", visibility: "hidden", width: "500px", padding: "2rem", fontFamily: "Georgia, serif", fontSize: "1.05rem", lineHeight: 1.8 }} />
 
-      <div className="book" role="region" aria-label="Book viewer">
-        {/* LEFT PAGE */}
-        <div
-          ref={leftPageRef}
-          className={`page left ${isFlipping && flipDirection === "prev" ? "flip-prev" : ""}`}
-        >
-          <div className="flip-page">
-            <div
-              className="page-content"
-              dangerouslySetInnerHTML={{
-                __html: pages[pageIndex]?.replace(/\n/g, "<br/>") || "",
+      {/* Book Container */}
+      <div className="relative w-full max-w-5xl aspect-[3/2] perspective-container flex items-center justify-center my-8">
+        <div className="relative w-full h-full shadow-2xl skew-x-0 transition-transform duration-500">
+
+          {/* STATIC LEFT PAGE (Underneath) */}
+          <div className="book-page-layer page-left z-0">
+            <div className="page-text-content" dangerouslySetInnerHTML={{ __html: formatText(baseLeftContent) }} />
+          </div>
+
+          {/* STATIC RIGHT PAGE (Underneath) */}
+          <div className="book-page-layer page-right z-0">
+            <div className="relative w-full h-full bg-black">
+              <Image
+                src={baseRightContent}
+                alt="Right Page"
+                fill
+                className="page-image-content object-cover border-[12px] border-white/90 shadow-inner"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* FLIPPER OVERLAY (Animated via Framer Motion) */}
+          {isFlipping && (
+            <motion.div
+              initial={{ rotateY: initialRotation }}
+              animate={{ rotateY: targetRotation }}
+              transition={{ duration: FLIP_DURATION, ease: [0.645, 0.045, 0.355, 1] }}
+              onAnimationComplete={onFlipComplete}
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0, // Anchored to the right page (spine is left)
+                width: '50%',
+                height: '100%',
+                transformOrigin: 'left center', // Rotate around spine
+                transformStyle: 'preserve-3d',
+                zIndex: 50,
               }}
-            />
-          </div>
-        </div>
+            >
+              {/* Front Face (Visible at 0deg - Right side) */}
+              <div className="flipper-face flipper-front">
+                {/* FRONT is always IMAGE content based on our logic */}
+                <div className="relative w-full h-full bg-black">
+                  <Image
+                    src={flipperFront}
+                    alt="Flip Front"
+                    fill
+                    className="page-image-content object-cover  shadow-inner"
+                  />
+                </div>
+              </div>
 
-        {/* RIGHT PAGE */}
-        <div
-          className={`page right ${isFlipping && flipDirection === "next" ? "flip-next" : ""}`}
-        >
-          <div className="flip-page">
-            <img src={rightImage} alt="Illustration" />
-          </div>
+              {/* Back Face (Visible at -180deg - Left side) */}
+              <div className="flipper-face flipper-back">
+                {/* BACK is always TEXT content based on our logic */}
+                <div className="page-text-content" dangerouslySetInnerHTML={{ __html: formatText(flipperBack) }} />
+              </div>
+            </motion.div>
+          )}
+
         </div>
       </div>
 
-      <div className="controls">
+      {/* Controls */}
+      <div className="flex items-center gap-6 mt-4">
         <button
-          className="btn"
+          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           onClick={handlePrevFlip}
           disabled={pageIndex === 0 || isFlipping}
         >
-          ← Prev
+          <span>← Previous</span>
         </button>
-        <div className="page-meta">
-          Page {pageIndex + 1} / {total}
+        <div className="text-white/80 font-mono text-sm">
+          Spread {pageIndex + 1} / {total}
         </div>
         <button
-          className="btn"
+          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           onClick={handleNextFlip}
           disabled={pageIndex === total - 1 || isFlipping}
         >
-          Next →
+          <span>Next →</span>
         </button>
       </div>
     </div>
