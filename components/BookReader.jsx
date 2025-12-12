@@ -246,7 +246,7 @@ export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
                 src={baseRightContent}
                 alt="Right Page"
                 fill
-                className="page-image-content object-cover border-[12px] border-white/90 shadow-inner"
+                className="page-image-content object-cover shadow-inner"
                 priority
               />
             </div>

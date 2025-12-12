@@ -1,6 +1,10 @@
 "use client";
+
 import SpaceScene from "@/components/SpaceScene";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+
 export default function ResourcesPage() {
     const resources = [
         { title: "NASA Space Weather Website", href: "https://science.nasa.gov/heliophysics/focus-areas/space-weather/", desc: "Overview of space weather and NASA's Space Weather Program." },
@@ -19,38 +23,72 @@ export default function ResourcesPage() {
         { title: "Brazilian EMBRACE Program (AEB/INPE)", href: "https://www2.inpe.br/climaespacial/portal/pt/", desc: "Real-time data and analysis platform for space weather in Brazil." },
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+    };
+
     return (
-        <main style={{ padding: 20, display: "flex", justifyContent: "center" }}>
-            <SpaceScene></SpaceScene>
-            <NavBar></NavBar>
-            <style jsx>{`
-                .glass-shell{width:100%;max-width:1100px}
-                .glass{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:26px;border-radius:14px;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
-                h2{color:#fff;margin:0 0 8px 0;text-align:center;font-size:1.9rem}
-                .lead{color:rgba(223,243,255,0.75);text-align:left;margin:12px 0 20px;font-size:1rem}
-                .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
-                .item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.03)}
-                .item h3{margin:0 0 6px 0;color:#e6f8ff;font-size:1.05rem}
-                .item p{margin:0;color:rgba(223,243,255,0.72);font-size:0.95rem}
-                .item a{color:#7fe6ff;text-decoration:none;margin-top:8px;display:inline-block}
-            `}</style>
+        <div className="relative min-h-screen">
+            <SpaceScene />
+            <NavBar />
 
-            <div className="glass-shell mt-30">
-                <div className="glass">
-                    <h2>NASA Data &amp; Space Weather Resources</h2>
-                    <p className="lead">Curated links related to space weather, outreach videos and partner resources. Open any link in a new tab.</p>
+            <main className="relative z-10 container mx-auto px-6 py-24">
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="glass max-w-5xl mx-auto p-8 md:p-12 mb-10"
+                >
+                    <h1 className="text-4xl font-bold text-white mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">
+                        NASA Data & Space Weather Resources
+                    </h1>
+                    <p className="text-lg text-blue-100/70 text-center max-w-3xl mx-auto">
+                        Curated links related to space weather, outreach videos and partner resources.
+                        Explore the data that powers our understanding of the universe.
+                    </p>
+                </motion.div>
 
-                    <div className="list">
-                        {resources.map((r) => (
-                            <div className="item" key={r.href}>
-                                <h3>{r.title}</h3>
-                                <p>{r.desc}</p>
-                                <a href={r.href} target="_blank" rel="noopener noreferrer">Open link ↗</a>
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+                >
+                    {resources.map((r, index) => (
+                        <motion.a
+                            key={index}
+                            href={r.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02, translateY: -5 }}
+                            className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors backdrop-blur-md group flex flex-col"
+                        >
+                            <h3 className="text-xl font-semibold text-blue-200 mb-3 group-hover:text-white transition-colors">
+                                {r.title}
+                            </h3>
+                            <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+                                {r.desc}
+                            </p>
+                            <div className="mt-4 text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center gap-1">
+                                Open Resource <span>↗</span>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </main>
+                        </motion.a>
+                    ))}
+                </motion.div>
+            </main>
+            <Footer />
+        </div>
     );
 }
