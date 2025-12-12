@@ -78,6 +78,13 @@ export default function NavBar() {
         </div>
 
         <Link
+          href="/resources"
+          className="text-sm font-medium px-3 py-1 rounded-md hover:bg-white/10 transition"
+        >
+          Resources
+        </Link>
+
+        <Link
           href="/about"
           className="text-sm font-medium px-3 py-1 rounded-md hover:bg-white/10 transition"
         >
@@ -128,6 +135,13 @@ export default function NavBar() {
               )}
             </div>
 
+            <Link
+              href="/resources"
+              className="mt-2 text-sm font-medium px-3 py-2 rounded-md hover:bg-white/8 transition"
+              onClick={() => setIsOpen(false)}
+            >
+            Resources
+            </Link>
             <Link
               href="/about"
               className="mt-2 text-sm font-medium px-3 py-2 rounded-md hover:bg-white/8 transition"
