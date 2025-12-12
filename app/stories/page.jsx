@@ -40,7 +40,7 @@ export default function StoriesGallery() {
       <div className="relative z-10 min-h-screen flex flex-col">
         <NavBar />
 
-        <main className="flex-grow container mx-auto px-4 py-16 md:py-24">
+        <main className="flex-grow container mx-auto px-4 py-32 md:py-36">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,19 +99,26 @@ export default function StoriesGallery() {
                     <div className="flex flex-col gap-3 mt-4">
 
                       <div className="flex gap-3">
-                        <Link
-                          href={`/stories/${story.id}/book`}
-                          className="flex-1 w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-medium transition-all shadow-lg hover:shadow-blue-500/25 active:scale-95"
-                        >
-                          <BookOpen size={18} />
-                          <span>Read Book</span>
+                        <Link href={`/stories/${story.id}/book`} className="flex-1">
+                          <motion.div
+                            whileHover="hover"
+                            whileTap={{ scale: 0.95 }}
+                            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-medium transition-all shadow-lg hover:shadow-blue-500/25 cursor-pointer"
+                          >
+                            <BookOpen size={18} />
+                            <span>Read Book</span>
+                          </motion.div>
                         </Link>
-                        <Link
-                          href={`/stories/${story.id}/video`}
-                          className="flex-1 w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium transition-all shadow-lg hover:shadow-purple-500/25 active:scale-95"
-                        >
-                          <Play size={18} />
-                          <span>Watch Video</span>
+
+                        <Link href={`/stories/${story.id}/video`} className="flex-1">
+                          <motion.div
+                            whileHover="hover"
+                            whileTap={{ scale: 0.95 }}
+                            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium transition-all shadow-lg hover:shadow-purple-500/25 cursor-pointer"
+                          >
+                            <Play size={18} />
+                            <span>Watch Video</span>
+                          </motion.div>
                         </Link>
                       </div>
                     </div>

@@ -3,10 +3,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import SpaceScene from "@/components/SpaceScene";
 import NavBar from "@/components/NavBar";
+import { motion, AnimatePresence } from "framer-motion";
+import { Send, Bot, User, Sparkles, MessageSquare } from "lucide-react";
+
 export default function AIChatPage() {
   const [messages, setMessages] = useState([
     { id: 1, role: "system", content: "You are a helpful assistant about the site's stories." },
-    { id: 2, role: "assistant", content: "Ask me anything about the story — paste a story in the context area if you'd like me to use it." },
+    { id: 2, role: "assistant", content: "Greetings, traveler! I am the ship's AI. Keep me updated with the story context, and I can answer any questions you have about the cosmos." },
   ]);
   const [input, setInput] = useState("");
   const [context, setContext] = useState("");
@@ -14,7 +17,6 @@ export default function AIChatPage() {
   const listRef = useRef(null);
 
   useEffect(() => {
-    // scroll to bottom on new messages
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
   }, [messages, loading]);
 
@@ -60,55 +62,124 @@ export default function AIChatPage() {
   }
 
   return (
-    <>
-    <NavBar></NavBar>
-        <SpaceScene/>
-    <div className="ai-chat-page mt-30 z-50" style={{padding:24,display:'flex',flexDirection:'column',gap:18,alignItems:'center'}}>
-      <style jsx>{`
-        .chat-shell{width:100%;max-width:980px;background:linear-gradient(180deg, rgba(8,10,20,0.7), rgba(6,8,18,0.6));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-        .header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-        .title{font-weight:700;color:#dff3ff}
-        .subtitle{color:rgba(223,243,255,0.6);font-size:0.95rem}
-        .context{margin:12px 0;display:flex;flex-direction:column;gap:8px}
-        .context textarea{width:100%;min-height:80px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:10px;color:#e7f2ff}
-        .messages{height:420px;overflow:auto;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.01));display:flex;flex-direction:column;gap:10px}
-        .msg{max-width:78%;padding:12px;border-radius:10px;line-height:1.5}
-        .msg.user{align-self:flex-end;background:linear-gradient(180deg, rgba(3,102,214,0.15), rgba(3,102,214,0.08));border:1px solid rgba(3,102,214,0.2);color:#dff3ff}
-        .msg.assistant{align-self:flex-start;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:#e7f2ff}
-        .composer{display:flex;gap:8px;margin-top:12px}
-        .composer textarea{flex:1;min-height:56px;border-radius:10px;padding:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:#e7f2ff}
-        .send{background:linear-gradient(90deg,#3b82f6,#06b6d4);border:none;padding:10px 16px;border-radius:10px;color:white;cursor:pointer}
-        .send[disabled]{opacity:0.5;cursor:default}
-        `}</style>
+    <div className="relative min-h-screen text-gray-200">
+      <SpaceScene />
+      <NavBar />
 
-      <div className="chat-shell">
-        <div className="header">
-          <div>
-            <div className="title">Story AI Chat</div>
-            <div className="subtitle">Ask anything about the story. Paste a story into the context area to give the assistant the full text.</div>
-          </div>
-        </div>
-
-        <div className="context">
-          <label style={{color:'rgba(223,243,255,0.7)'}}>Story context (optional)</label>
-          <textarea value={context} onChange={(e) => setContext(e.target.value)} placeholder="Paste the story here so the assistant can reference it when answering." />
-        </div>
-
-        <div className="messages" ref={listRef}>
-          {messages.map((m) => (
-              <div key={m.id} className={`msg ${m.role === 'user' ? 'user' : 'assistant'}`}>
-              <div style={{whiteSpace:'pre-wrap'}}>{m.content}</div>
+      <main className="relative z-10 container mx-auto px-4 py-36 flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-4xl glass rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+        >
+          {/* Header */}
+          <div className="p-6 border-b border-white/10 bg-white/5 backdrop-blur-md flex items-center gap-4">
+            <div className="p-3 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300">
+              <Bot size={28} />
             </div>
-          ))}
-          {loading && <div className="msg assistant">Thinking...</div>}
-        </div>
+            <div>
+              <h1 className="text-2xl font-bold text-white flex items-center gap-2">
+                Stellar AI Assistant <Sparkles size={18} className="text-yellow-400 animate-pulse" />
+              </h1>
+              <p className="text-sm text-blue-200/60">Powered by the ship's mainframe. Ask me anything!</p>
+            </div>
+          </div>
 
-        <div className="composer">
-          <textarea value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKey} placeholder="Type your question and press Ctrl+Enter to send" />
-          <button className="send" onClick={sendMessage} disabled={loading || !input.trim()}>Send</button>
-        </div>
-      </div>
+          <div className="flex flex-col md:flex-row h-[600px]">
+            {/* Sidebar Context Panel */}
+            <div className="w-full md:w-1/3 border-r border-white/10 bg-black/20 p-4 flex flex-col gap-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-blue-300/80 mb-1 flex items-center gap-2">
+                <MessageSquare size={14} /> Story Context
+              </label>
+              <textarea
+                value={context}
+                onChange={(e) => setContext(e.target.value)}
+                placeholder="Paste the story text here so I can deduce facts from it..."
+                className="flex-1 w-full bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none transition-all placeholder:text-gray-600 font-mono"
+              />
+            </div>
+
+            {/* Chat Area */}
+            <div className="flex-1 flex flex-col bg-gradient-to-b from-transparent to-black/20">
+              <div className="flex-1 overflow-y-auto p-6 space-y-6" ref={listRef}>
+                <AnimatePresence>
+                  {messages.filter(m => m.role !== 'system').map((m) => (
+                    <motion.div
+                      key={m.id}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      className={`flex gap-4 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                    >
+                      {m.role === 'assistant' && (
+                        <div className="w-8 h-8 rounded-full bg-blue-600/30 border border-blue-400/30 flex items-center justify-center shrink-0 mt-1">
+                          <Bot size={16} className="text-blue-200" />
+                        </div>
+                      )}
+
+                      <div className={`max-w-[80%] p-4 rounded-2xl text-sm leading-relaxed shadow-lg backdrop-blur-sm ${m.role === 'user'
+                        ? 'bg-blue-600/20 border border-blue-500/30 text-blue-50 rounded-tr-none'
+                        : 'bg-white/5 border border-white/10 text-gray-200 rounded-tl-none'
+                        }`}>
+                        <div className="whitespace-pre-wrap">{m.content}</div>
+                      </div>
+
+                      {m.role === 'user' && (
+                        <div className="w-8 h-8 rounded-full bg-purple-600/30 border border-purple-400/30 flex items-center justify-center shrink-0 mt-1">
+                          <User size={16} className="text-purple-200" />
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+                {loading && (
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-blue-600/30 border border-blue-400/30 flex items-center justify-center shrink-0">
+                      <Bot size={16} className="text-blue-200" />
+                    </div>
+                    <div className="bg-white/5 border border-white/10 text-gray-400 p-4 rounded-2xl rounded-tl-none text-sm italic flex items-center gap-2">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></span>
+                      <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+                      <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></span>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Composer */}
+              <div className="p-4 bg-white/5 border-t border-white/10 backdrop-blur-md">
+                <div className="relative flex items-end gap-2 bg-black/30 border border-white/10 rounded-xl p-2 focus-within:border-blue-500/50 transition-colors">
+                  <textarea
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKey}
+                    placeholder="Type your message..."
+                    className="flex-1 bg-transparent border-none text-white placeholder:text-gray-500 focus:outline-none p-2 max-h-32 resize-none"
+                    rows={1}
+                  />
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={sendMessage}
+                    disabled={loading || !input.trim()}
+                    className="bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-lg"
+                  >
+                    <motion.div
+                      animate={loading ? { rotate: 360 } : {}}
+                      transition={loading ? { duration: 1, repeat: Infinity, ease: "linear" } : {}}
+                    >
+                      {loading ? <Sparkles size={20} /> : <Send size={20} />}
+                    </motion.div>
+                  </motion.button>
+                </div>
+                <div className="text-xs text-center text-gray-500 mt-2">
+                  Press Ctrl + Enter to send
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
+      </main>
     </div>
-          </>
   );
 }

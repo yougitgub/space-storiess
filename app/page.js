@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Rocket } from "lucide-react";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <NavBar />
         <SpaceScene />
 
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[85vh] text-center px-4">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[85vh] text-center px-4 pt-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,11 +42,22 @@ export default function Home() {
           >
             <Link href="/stories">
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(59, 130, 246, 0.6)" }}
+                whileHover="hover"
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-full text-xl font-bold border border-white/20 shadow-lg backdrop-blur-sm transition-all"
+                className="group relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-full text-xl font-bold border border-white/20 shadow-lg backdrop-blur-sm transition-all flex items-center gap-3 hover:scale-110 duration-500 hover:cursor-pointer overflow-hidden"
               >
-                Start Your Adventure 🚀
+                <span className="relative z-10">Start Your Adventure</span>
+                <Rocket size={24} className="relative z-10" />
+
+                {/* Button Glow Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-white/20"
+                  initial={{ scale: 0, opacity: 0 }}
+                  variants={{
+                    hover: { scale: 1.5, opacity: 0.2 }
+                  }}
+                  transition={{ duration: 0.4 }}
+                />
               </motion.button>
             </Link>
           </motion.div>

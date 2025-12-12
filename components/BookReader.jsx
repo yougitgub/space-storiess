@@ -3,6 +3,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight, BookOpen } from "lucide-react";
 
 export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
   const containerRef = useRef(null);
@@ -295,24 +296,31 @@ export default function BookReader({ storyText = "", images = ["/file.svg"] }) {
       </div>
 
       {/* Controls */}
-      <div className="flex items-center gap-6 mt-4">
-        <button
-          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+      <div className="flex items-center gap-6 mt-4 z-50">
+        <motion.button
+          whileHover="hover"
+          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 backdrop-blur-sm"
           onClick={handlePrevFlip}
           disabled={pageIndex === 0 || isFlipping}
         >
-          <span>← Previous</span>
-        </button>
-        <div className="text-white/80 font-mono text-sm">
+          <ChevronLeft size={20} />
+          <span>Previous</span>
+        </motion.button>
+
+        <div className="text-white/80 font-mono text-sm flex items-center gap-2 bg-black/40 px-4 py-2 rounded-lg border border-white/10">
+          <BookOpen size={16} className="text-blue-300" />
           Spread {pageIndex + 1} / {total}
         </div>
-        <button
-          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+
+        <motion.button
+          whileHover="hover"
+          className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 backdrop-blur-sm"
           onClick={handleNextFlip}
           disabled={pageIndex === total - 1 || isFlipping}
         >
-          <span>Next →</span>
-        </button>
+          <span>Next</span>
+          <ChevronRight size={20} />
+        </motion.button>
       </div>
     </div>
   );

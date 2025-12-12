@@ -33,7 +33,7 @@ export default function AboutPage() {
       <SpaceScene />
       <NavBar />
 
-      <main className="relative z-10 max-w-6xl mx-auto px-6 py-24">
+      <main className="relative z-10 max-w-6xl mx-auto px-6 py-32">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function AboutPage() {
         >
           <section className="glass p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-blue-300 mb-4 flex items-center gap-2">
-              <span>🛰️</span> About the Competition
+              <span></span> About the Competition
             </h2>
             <p className="leading-relaxed text-blue-100/80">
               Stellar Minds Space started as part of an international challenge to
@@ -63,7 +63,7 @@ export default function AboutPage() {
 
           <section className="glass p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-blue-300 mb-4 flex items-center gap-2">
-              <span>🌌</span> About Stellar Minds Space
+              <span></span> About Stellar Minds Space
             </h2>
             <p className="leading-relaxed text-blue-100/80">
               This platform is our digital home for <strong>space stories</strong>.
@@ -82,7 +82,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-center mb-10 text-white"
           >
-            👨‍🚀 Meet Our Team
+            Meet Our Team
           </motion.h2>
 
           <motion.div

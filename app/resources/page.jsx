@@ -4,6 +4,7 @@ import SpaceScene from "@/components/SpaceScene";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 export default function ResourcesPage() {
     const resources = [
@@ -43,7 +44,7 @@ export default function ResourcesPage() {
             <SpaceScene />
             <NavBar />
 
-            <main className="relative z-10 container mx-auto px-6 py-24">
+            <main className="relative z-10 container mx-auto px-6 py-32">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -81,8 +82,9 @@ export default function ResourcesPage() {
                             <p className="text-gray-400 text-sm leading-relaxed flex-grow">
                                 {r.desc}
                             </p>
-                            <div className="mt-4 text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center gap-1">
-                                Open Resource <span>↗</span>
+                            <div className="mt-4 text-blue-400 text-sm font-medium group-hover:text-blue-300 flex items-center gap-2">
+                                Open Resource
+                                <ExternalLink size={16} />
                             </div>
                         </motion.a>
                     ))}
