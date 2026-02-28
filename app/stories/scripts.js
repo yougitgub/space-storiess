@@ -601,9 +601,9 @@ but written into the structure of existence itself.
 And the universe, immense and silent,
 continued to move
 exactly as it was drawn. 
-\`;
+`;
 
-export const starThatRefusedToDieScript = \`
+export const starThatRefusedToDieScript = `
 Page 1 - The Error No One Expected
 The alert did not say "Explosion."
 It said:
