@@ -12,7 +12,7 @@ export const stories = [
         id: "1",
         title: "Aurora Nights",
         script: auroraScript,
-        videoLink: "https://www.youtube.com/embed/mF-fGrqjfzc",
+        videoLink: "https://www.youtube.com/embed/nZP4gNOBVXw?autoplay=1&controls=0&loop=1&playlist=nZP4gNOBVXw",
         difficulty: "Easy",
         description: "A winter tale from northern Norway. discover the secrets of the Northern Lights and the message sent from the Sun itself.",
         image: "https://final-project-repo-zeta.vercel.app/1.jpg",
