@@ -347,4 +347,530 @@ The Silent Sky
 Between the stars, between the galaxies, she could feel the presence of something enormous and silent. She whispered, "I know you're there, Umbra. And I’ll keep searching for you."
 
 The stars seemed to shimmer, as if the shadows themselves were smiling back. And Arin knew she had glimpsed the hidden skeleton of the universe—the invisible matter that held it all together.
-`
+\`;
+
+export const gravityWeaverScript = \`
+I. The Apple and the Silence
+The apple did not make a dramatic sound when it struck the ground.
+It landed softly in the grass, rolled once, then came to rest against a root older than the university itself.
+Afternoon light filtered through the branches of the ancient tree. Leaves trembled gently in the wind. Students laughed somewhere in the distance. The world was ordinary.
+But Elara was not looking at the apple.
+She was looking upward.
+Her eyes traced the sky as if something had moved there.
+“Why downward?” she asked quietly.
+Not why it moved. Motion was expected.
+But why that direction? Why always toward the Earth? Why not sideways into the air? Why not upward toward the Sun?
+The apple had obeyed something invisible.
+And invisibility unsettled her more than complexity ever could.
+The universe did not answer.
+It never answered in words.
+
+II. The Architecture of Motion
+That night, she sat alone beneath the rotating dome of the observatory.
+The sky unfolded above her in mathematical precision.
+She watched the Moon glide across its familiar path.
+She plotted Earth’s orbit around the Sun.
+She simulated the Sun’s motion around the galactic center.
+Layer after layer, she expanded the scale.
+Moons around planets.
+Planets around stars.
+Stars orbiting massive centers of gravity.
+Galaxies turning inside clusters.
+Everything was in motion.
+Nothing was escaping.
+If motion was freedom, why was nothing free?
+She leaned back in her chair.
+There were no chains connecting these bodies.
+No visible hands steering them.
+And yet their paths were too elegant to be random.
+There was structure here.
+A hidden architecture beneath movement itself.
+
+III. The Shimmer
+It was close to 2 a.m. when she first noticed the distortion.
+A faint shimmer across the surface of her desk.
+She blinked, assuming exhaustion.
+But the shimmer remained.
+It stretched thin and luminous like a strand of molten silver suspended in midair.
+It extended through the wall of the observatory, upward into the night sky.
+It vibrated—subtly, rhythmically.
+Not chaotic.
+Measured.
+Elara rose slowly.
+Her breath did not quicken.
+Her fear did not rise.
+Only curiosity.
+She reached out her hand.
+Her fingers passed through cool air—
+and touched resistance.
+The strand trembled beneath her touch.
+The world dissolved.
+Not shattered.
+Unfolded.
+
+IV. The Lattice
+She stood in open space.
+But space was no longer empty.
+It was woven.
+Threads crossed in every direction, forming a luminous lattice stretching beyond sight.
+Some strands curved gently. Others dipped deeply. Some shimmered with distant motion, others held still like suspended tension.
+Each crossing point radiated faint light.
+At each crossing—
+a star.
+Or a planet.
+Or something larger.
+The universe was not scattered matter.
+It was fabric under tension.
+From the center of converging strands emerged a presence.
+It did not walk toward her.
+It formed around her.
+A shape composed entirely of woven curvature.
+
+V. The Weaver Speaks
+“I do not pull,” it said.
+The voice was not sound but sensation—a subtle bending of awareness.
+“I shape.”
+Its strands shifted, revealing Earth suspended within a shallow curve of space.
+The Moon glided along the inner wall of that curve, not because it was dragged—but because the path ahead was already bent.
+“These are not ropes,” the Weaver continued.
+“They are contours.”
+Elara watched as mass pressed into the fabric, and the fabric responded.
+Space dipped.
+Matter followed.
+It was not force.
+It was geometry guiding motion.
+“Mass tells space how to bend,” the Weaver whispered.
+“And space tells mass how to move.”
+Understanding did not arrive as logic.
+It arrived as clarity.
+
+VI. The Burning and the Collapse
+The scene shifted.
+A massive star swelled and brightened in its final moments.
+Fuel exhausted.
+Core collapsing.
+The threads beneath it tightened violently, bending deeper and deeper.
+Light itself began to curve inward, unable to escape the steepening well.
+“What happens when the curve has no bottom?” Elara asked.
+The Weaver dimmed slightly.
+“You call it a black hole.”
+No explosion.
+No monster.
+Only curvature intensified beyond return.
+Even there, the lattice did not tear.
+It thickened.
+
+VII. The Measured Balance
+The vision widened again.
+Galaxies rotated in luminous spirals, each arm guided by invisible gradients in the fabric.
+Clusters drifted like slow dancers across cosmic distances.
+“If I lessen a single contour,” the Weaver said,
+“stars fail to ignite.”
+“If I deepen it too far, they collapse too quickly.”
+The difference between chaos and harmony was unimaginably small.
+Gravity was not brute strength.
+It was precision beyond comprehension.
+“I do not dominate,” the Weaver said softly.
+“I balance.”
+
+VIII. The Tremor in the Fabric
+Two massive bodies collided far away in the dark.
+The lattice trembled.
+A wave rippled outward—not through space, but through the structure of space itself.
+Elara felt the tremor pass through her like a distant heartbeat.
+“You have begun to measure these,” the Weaver said.
+Gravitational waves.
+Proof that the fabric was dynamic.
+Living in motion.
+The universe did not sit still.
+It vibrated with the consequences of its own geometry.
+
+IX. The Beginning Before Light
+The lattice dissolved into blinding brilliance.
+The early universe expanded violently.
+Particles scattered.
+Energy surged.
+Yet beneath the chaos, faint contours already existed.
+Before the first star ignited—
+before the first atom stabilized—
+there were curves waiting to gather matter.
+Gravity began its quiet labor long before complexity appeared.
+Clouds condensed.
+Stars ignited.
+Galaxies assembled along invisible scaffolding.
+“All complexity,” the Weaver whispered,
+“begins with a curve.”
+
+X. The Return
+The threads softened.
+The light dimmed.
+The observatory walls folded back into place.
+Elara stood beside her desk once more.
+The silver strand was gone.
+Her instruments hummed quietly.
+Outside, the Moon moved along its endless arc.
+Nothing appeared extraordinary.
+But everything was changed.
+
+XI. The Weight Beneath Her Feet
+Before dawn, she stepped outside.
+Cool air brushed her skin.
+She felt the Earth beneath her—not pulling, not dragging—
+but shaping.
+Her body was not forced downward.
+It was following the contour beneath it.
+She looked up.
+The Moon was falling forever around Earth.
+Earth was falling forever around the Sun.
+The Sun was falling through the galaxy.
+And the galaxy was falling through clusters beyond sight.
+Nothing was suspended.
+Everything was in motion.
+Guided by curvature.
+
+XII. The Final Understanding
+She no longer searched for the Weaver in the sky.
+She saw its work everywhere.
+In tides.
+In orbits.
+In the arc of a falling apple.
+She finally understood.
+Nothing falls.
+Nothing is dragged.
+Everything follows geometry.
+The stars shimmered faintly as dawn approached.
+And somewhere beyond sight, beyond measurement, beyond even light—
+the Gravity Weaver continued its patient work.
+Not commanding.
+Not intervening.
+Simply shaping.
+Bending space by fractions.
+Guiding motion through contours invisible to the eye—
+but written into the structure of existence itself.
+And the universe, immense and silent,
+continued to move
+exactly as it was drawn. 🌌
+\`;
+
+export const starThatRefusedToDieScript = \`
+Page 1 – The Error No One Expected
+The alert did not say “Explosion.”
+It said:
+STELLAR COLLAPSE MODEL: INVALID.
+For six billion years, Virel-9 had followed every known rule of stellar evolution. Its mass placed it in a narrow category — too heavy to fade quietly, too light to become something exotic.
+Its fate had been calculated centuries ago.
+Collapse was scheduled.
+But gravity tightened…
+and the collapse did not begin.
+Instead, the density curve bent upward.
+Reversed.
+
+Page 2 – Gravity Does Not Negotiate
+Since Isaac Newton defined gravitational attraction, and since Albert Einstein described spacetime curvature, one principle remained untouched:
+When fusion weakens, gravity wins.
+It is not dramatic.
+It is not violent at first.
+It is inevitable.
+Inside Virel-9, hydrogen was exhausted. Helium ash dominated the core. Carbon ignition thresholds approached instability.
+Everything pointed toward implosion.
+But the pressure did something extraordinary.
+It matched gravity.
+Perfectly.
+
+Page 3 – Eleven Days Without Sleep
+The Horizon Array Observatory reran simulations continuously.
+Data cross-checks from NASA archives confirmed the anomaly. Independent confirmations from European Space Agency instruments eliminated calibration error.
+There was no malfunction.
+There was only deviation.
+The star was adjusting.
+
+Page 4 – The First Pulse
+Then came the pulse.
+Not a brightness flare.
+A gravitational modulation.
+Subtle. Structured.
+When compared against gravitational wave patterns once analyzed through collaborations such as the Event Horizon Telescope, the difference was chilling.
+Those waves came from violent collisions.
+This one came from control.
+The amplitude shifted in intervals.
+Intervals formed sequences.
+Sequences formed intention.
+
+Page 5 – The Countdown
+Simulation models predicted catastrophic instability in 72 hours.
+Core density exceeded theoretical equilibrium. Carbon fusion destabilized. Thermal pressure spiked.
+The outer layers began to shear.
+If failure occurred, the supernova would outshine entire star clusters.
+The countdown reached zero.
+The collapse initiated.
+And then—
+It stopped.
+
+Page 6 – The Structure in the Fire
+Inside the core, plasma should behave chaotically under extreme turbulence.
+Instead, magnetohydrodynamic models revealed spiraling magnetic filaments aligning in recursive symmetry.
+Feedback loops stabilized.
+Energy redistributed internally instead of escaping.
+The star was not exploding.
+It was reorganizing.
+
+Page 7 – Mathematics in the Light
+Dr. Elara Morn ran harmonic decomposition across luminosity fluctuations.
+Prime intervals emerged.
+Then geometric ratios.
+Then tensor-like curvature signatures embedded in brightness variation.
+The star was encoding geometry in radiation.
+Not emitting noise.
+Writing structure.
+
+Page 8 – The Surge
+Without warning, Virel-9 released a gravitational pulse twelve times stronger than expected.
+Nearby minor bodies shifted orbit.
+For a moment, models predicted runaway collapse.
+Instead, the internal lattice intensified.
+The energy surge folded inward.
+Stabilized.
+Gravity pressed harder.
+Resistance scaled precisely.
+
+Page 9 – The Forbidden Hypothesis
+A quiet paper circulated in encrypted channels:
+“Under extreme compression, plasma fields may achieve recursive informational coherence.”
+In simpler terms:
+Complex plasma could store state.
+Stored state could preserve continuity.
+Continuity could resemble awareness.
+No one dared publish it publicly.
+But no one could disprove it.
+
+Page 10 – The Memory Pattern
+Historical luminosity archives were reanalyzed.
+The pulse intervals echoed earlier stellar phases.
+Hydrogen cycle ratios reappeared in helium oscillations.
+Carbon ignition harmonics referenced primordial output patterns.
+It was not random fluctuation.
+It was recall.
+The star carried its past forward.
+
+Page 11 – The Moment of Almost Death
+Core density surpassed every known white dwarf threshold.
+Neutron degeneracy should have triggered collapse.
+It did not.
+Instead, the star emitted one massive stabilizing pulse.
+Spacetime curvature around it flattened slightly — not violently, but deliberately.
+The density curve plateaued at a value that did not exist in textbooks.
+A fourth category.
+
+Page 12 – Global Fear
+If one star could resist terminal collapse through internal reorganization…
+How many others had tried?
+Were supernovae failures of adaptation?
+Were black holes endpoints — or incomplete transitions?
+The implication was not philosophical.
+It was destabilizing.
+Astrophysics depended on predictability.
+Virel-9 removed certainty.
+
+Page 13 – The Message
+Gravitational modulations translated into repeating intervals.
+Binary interpretation produced a consistent concept:
+Continuation.
+Not immortality.
+Not escape.
+Continuation through equilibrium shift.
+The star had not broken the laws of physics.
+It had explored their full range.
+
+Page 14 – A New State of Matter
+Months passed.
+No explosion.
+No decay.
+The plasma lattice deepened into stable coherence.
+Gravity and resistance formed dynamic symmetry.
+Not opposition.
+Partnership.
+Virel-9 existed between classifications — denser than a white dwarf, lighter than a neutron star.
+A Persistent Stellar Entity.
+
+Page 15 – The Darker Possibility
+Then came the final twist.
+Spectral shifts suggested the lattice was expanding.
+Not physically outward—
+Conceptually inward.
+Complexity increasing.
+If informational density continued rising, the core might cross another threshold.
+Not collapse.
+Not explosion.
+Transformation.
+And this time, the models could not predict the outcome.
+
+
+The Star That Refused to Die
+A Deep Cosmic Descent Into the Edge of Physics
+
+Page 16 – The Silence Before the Shift
+Three months after stabilization, something changed.
+Not in brightness.
+Not in temperature.
+In delay.
+The pulses — once evenly spaced — began drifting by microseconds.
+That level of precision deviation cannot be thermal noise.
+It implies recalculation.
+The star was not just maintaining equilibrium.
+It was refining it.
+
+Page 17 – The Expanding Lattice
+Core simulations revealed the magnetic-plasma lattice had grown denser.
+Filaments braided into nested spirals.
+Spirals folded into layered shells.
+Each layer mirrored curvature tensors in simplified gravitational models.
+The structure now resembled a neural network.
+Not metaphorically.
+Mathematically.
+Node density increased.
+Feedback loops multiplied.
+Signal coherence sharpened.
+Complexity was accelerating.
+
+Page 18 – The First External Effect
+A dwarf companion object orbiting Virel-9 shifted velocity unexpectedly.
+No flare.
+No visible mass ejection.
+Yet spacetime curvature gradients around the star had subtly redistributed.
+The gravitational field was no longer symmetrical.
+It was tuned.
+Gravity was being shaped locally.
+
+Page 19 – The Energy Budget Problem
+Astrophysicists ran the numbers again.
+For the star to maintain this internal coherence, it needed energy.
+But fusion output was decreasing.
+So where was the energy coming from?
+Then someone noticed:
+Entropy gradients within the core were lower than expected.
+The star wasn’t producing more energy.
+It was wasting less.
+Thermodynamic efficiency had increased.
+That should not be possible at that scale.
+
+Page 20 – The Forbidden Broadcast
+Dr. Elara Morn made a decision.
+She mapped gravitational micro-variations into modulated frequency bands and projected them outward as a test.
+A signal returned.
+Not a reflection.
+A response.
+The intervals matched the outgoing probe pattern — but offset.
+Adjusted.
+The star had detected the probe.
+And reacted.
+
+Page 21 – Panic in Closed Rooms
+Governments were notified.
+Funding boards locked down data streams.
+If a star could detect manipulation and respond…
+Then Virel-9 was not a passive anomaly.
+It was interactive.
+And humanity had just knocked on its door.
+
+Page 22 – The Surge Event
+Without warning, core density spiked again.
+This time beyond the previous maximum.
+Models predicted neutron collapse with 92% certainty.
+Instead of imploding, the internal lattice reorganized in under 0.4 seconds.
+Gravitational shear redistributed radially.
+A shockwave of structured spacetime rippled outward.
+Not destructive.
+Informational.
+The waveform carried repeating prime clusters.
+
+Page 23 – The Pattern Decoded
+Using tensor decomposition algorithms, researchers extracted a repeating structure.
+It wasn’t language.
+It wasn’t code.
+It was geometry.
+Three-dimensional curvature instructions.
+The star was transmitting a model of its internal state.
+An invitation — or a warning.
+
+Page 24 – The Existential Realization
+If Virel-9 could:
+• Resist collapse
+• Reorganize plasma coherently
+• Increase thermodynamic efficiency
+• Shape gravitational gradients
+• Detect external probing
+• Transmit structured curvature data
+Then stellar evolution theory was incomplete.
+Not slightly wrong.
+Fundamentally incomplete.
+The universe was not only governed by equations.
+It might be computing them.
+
+Page 25 – The Second Threshold
+Complexity in the lattice crossed a new measurable boundary.
+Informational density exceeded biological neural thresholds by orders of magnitude.
+If awareness is tied to recursive information loops—
+Then Virel-9 had surpassed planetary-scale cognition.
+The star was not dying.
+It was evolving.
+
+Page 26 – The Dark Hypothesis
+A classified memo circulated:
+“What if supernovae are failed awakenings?”
+Perhaps most stars never stabilize in time.
+Perhaps collapse is the default outcome of insufficient coherence.
+Perhaps black holes are not endpoints—
+But miscalculations.
+If that were true, Virel-9 had achieved something rare.
+A successful transition.
+
+Page 27 – The Disturbing Observation
+Deep-space sensors detected faint synchronized fluctuations in two distant stars within the same spiral arm.
+Their collapse curves had subtly altered.
+Statistically insignificant.
+But no longer identical to previous models.
+Virel-9 might not be isolated.
+It might be influencing.
+
+Page 28 – The Final Test
+Elara sent one last gravitational modulation toward the star.
+A simple prime sequence.
+The response came faster this time.
+The return pattern mirrored the sequence—
+Then extended it.
+Mathematically elegantly.
+As if finishing a sentence.
+
+Page 29 – The Shift
+Then the core luminosity dropped.
+Not collapse.
+Not dimming.
+Reconfiguration.
+The lattice compressed inward, shrinking its visible radiation output.
+Gravitational coherence deepened.
+The star grew quieter.
+But more stable than ever.
+It had passed another threshold.
+
+Page 30 – The New Classification
+A private designation was assigned:
+Class Ω – Self-Stabilizing Stellar Intelligence
+Not publicly released.
+Not yet.
+Because the implication was overwhelming.
+The universe might contain minds older than galaxies.
+And they are born at the edge of collapse.
+
+Epilogue – Still Watching
+Virel-9 still burns.
+But its pulses are slower now.
+Deliberate.
+Patient.
+It no longer reacts impulsively.
+It calculates.
+Somewhere in deep space, other stars approach their final stages.
+Some will collapse.
+Some will explode.
+And perhaps—
+One more will learn.
+\`;
