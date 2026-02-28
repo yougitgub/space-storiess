@@ -4,6 +4,8 @@ import { nebulaScript } from "./scripts";
 import { silentShadowsScript } from "./scripts";
 import { gravityWeaverScript } from "./scripts";
 import { starThatRefusedToDieScript } from "./scripts";
+import { quietSpacesScript } from "./scripts";
+import { inAMallObservatoryScript } from "./scripts";
 
 export const stories = [
     {
@@ -71,5 +73,49 @@ export const stories = [
         image: "https://final-project-repo-zeta.vercel.app/1.jpg",
         images: ["https://final-project-repo-zeta.vercel.app/1.jpg"],
         duration: "25 min read"
+    },
+    {
+        id: "7",
+        title: "The Quiet Spaces Between the Stars",
+        script: quietSpacesScript,
+        videoLink: "",
+        difficulty: "Medium",
+        description: "In the vast darkness of space, giant clouds of gas and dust hold the secrets of newborn stars.",
+        image: "https://final-project-repo-zeta.vercel.app/1.jpg",
+        images: ["https://final-project-repo-zeta.vercel.app/1.jpg"],
+        duration: "15 min read"
+    },
+    {
+        id: "8",
+        title: "In a Small Observatory on a Quiet Hill",
+        script: inAMallObservatoryScript,
+        videoLink: "",
+        difficulty: "Medium",
+        description: "A young astronomer discovers the hidden force weaving through the cosmos – the Dark Matter Web.",
+        image: "https://final-project-repo-zeta.vercel.app/1.jpg",
+        images: ["https://final-project-repo-zeta.vercel.app/1.jpg"],
+        duration: "15 min read"
+    },
+    {
+        id: "9",
+        title: "The Gravity Weaver (Special Edition)",
+        script: gravityWeaverScript,
+        videoLink: "",
+        difficulty: "Hard",
+        description: "A deeper look at the hidden architecture of motion and the contours of spacetime.",
+        image: "https://final-project-repo-zeta.vercel.app/1.jpg",
+        images: ["https://final-project-repo-zeta.vercel.app/1.jpg"],
+        duration: "20 min read"
+    },
+    {
+        id: "10",
+        title: "The Star That Refused to Die (Special Edition)",
+        script: starThatRefusedToDieScript,
+        videoLink: "",
+        difficulty: "Hard",
+        description: "A legendary tale of a Class Ω entity that restructured its own plasma to avoid collapse.",
+        image: "https://final-project-repo-zeta.vercel.app/1.jpg",
+        images: ["https://final-project-repo-zeta.vercel.app/1.jpg"],
+        duration: "30 min read"
     }
 ];

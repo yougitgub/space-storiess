@@ -244,112 +244,163 @@ The Big Bang wasn’t the end of the story—it was the beginning. Even now, the
 export const nebulaScript = `
 The Quiet Spaces Between the Stars
 In the vast darkness of space, between the shining stars and spinning planets, there are giant clouds stretching across unimaginable distances. These clouds are not like the ones above Earth—they are made of gas, dust, and tiny particles floating softly through the emptiness. At first glance, they may seem silent and empty, but inside them, entire worlds are waiting to be born. These magical, colorful, mysterious places are called nebulae.
-
 What a Nebula Really Is
-A nebula is a huge cloud made mostly of hydrogen and helium, the simplest elements in the universe. Mixed into it are tiny specks of dust, smaller than grains of sand. Some nebulae are calm and gentle, spread thinly across light‑years. Others are thick, glowing like cosmic fog lit from within. Each nebula holds secrets—new stars, collapsing clouds, swirling colors, and the remains of ancient suns.
-
+A nebula is a huge cloud made mostly of hydrogen and helium, the simplest elements in the universe. Mixed into it are tiny specks of dust, smaller than grains of sand. Some nebulae are calm and gentle, spread thinly across light-years. Others are thick, glowing like cosmic fog lit from within. Each nebula holds secrets—new stars, collapsing clouds, swirling colors, and the remains of ancient suns.
 The Birth of a Nebula
-Nebulae can form in different ways. Some are born when old stars die and scatter their outer layers into space. Others come from leftover material from the early universe, drifting silently for billions of years. When powerful supernova explosions occur, they send shockwaves that push gas together, forming brand‑new nebulae. Each nebula begins as a gentle cloud, waiting for gravity to whisper its next command.
-
+Nebulae can form in different ways. Some are born when old stars die and scatter their outer layers into space. Others come from leftover material from the early universe, drifting silently for billions of years. When powerful supernova explosions occur, they send shockwaves that push gas together, forming brand-new nebulae. Each nebula begins as a gentle cloud, waiting for gravity to whisper its next command.
 Colors Painted by the Universe
 Many nebulae shine with incredible colors—reds, blues, greens, and purples that stretch like giant murals across space. These colors come from energy. When nearby stars shine, their light excites the gas, making it glow. Hydrogen glows red, oxygen glows green or blue, and dust shines in gold and brown. No artist could paint something so huge or so beautiful; the universe paints its own masterpieces.
-
 The Calm Before Creation
 Inside a nebula, most places are cold and quiet. Gas floats gently, barely moving. Dust drifts like snowflakes in slow motion. But hidden inside these calm regions are tiny disturbances—areas where the gas becomes just a little thicker. Gravity notices. It begins to pull. Slowly, silently, the nebula starts to change.
-
 Gravity’s First Touch
 As gravity pulls the gas together, clumps begin to form. The more the gas gathers, the heavier the clump becomes, and the stronger gravity pulls. What begins as a small pocket of dense gas becomes a growing sphere. This process can take millions of years, but space is patient. The nebula doesn’t rush. It simply transforms.
-
 A Protostar Begins to Form
 Inside the densest clumps, temperatures rise. Pressure increases. The gas squeezes tighter and tighter. At the center, a warm core appears—a protostar, the baby stage of a star. It doesn’t shine yet, but it glows faintly with heat. Around it, the nebula swirls like a giant cradle, protecting the newborn star.
-
 The Star Awakens
 Millions of years pass. The core grows hotter and heavier. Finally, when the temperature reaches millions of degrees, the atoms inside begin to fuse. Hydrogen atoms merge into helium, releasing massive amounts of energy. In that instant, the protostar becomes a real star, shining its first brilliant light. The nebula around it glows even brighter as the star’s radiation spreads through it.
-
 Nebulae as Star Nurseries
 Nebulae that form stars are often called stellar nurseries. In these magical regions, dozens—sometimes hundreds—of stars can be born together. Some grow into giant blue stars that burn hot and fast. Others become smaller yellow stars like our Sun. Many form planets, moons, and entire solar systems. In the quiet heart of a nebula, new worlds begin.
-
 Planetary Systems From Dust
-The dust around a newborn star forms a spinning disk. Dust grains collide and stick together. Tiny rocks grow into mountain‑sized objects. Over millions of years, these pieces build planets. Gas giants form far from the star, while rocky planets form closer. Everything—from mountains to oceans to the air we breathe—begins from the dust inside a nebula.
-
+The dust around a newborn star forms a spinning disk. Dust grains collide and stick together. Tiny rocks grow into mountain-sized objects. Over millions of years, these pieces build planets. Gas giants form far from the star, while rocky planets form closer. Everything—from mountains to oceans to the air we breathe—begins from the dust inside a nebula.
 When Stars Shape Their Nebulae
 Young stars can be powerful. Their light pushes gas away. Their winds carve shapes—pillars, waves, and arches. Some stars explode, sending shockwaves that sculpt the nebula into new forms. Nebulae are not still pictures—they constantly grow, stretch, twist, and reshape, like cosmic sculptures made of starlight and shadow.
-
 Nebulae Made From Dying Stars
 Not all nebulae create stars. Some form when stars reach the end of their lives. A small star may puff out its outer layers, forming a glowing shell called a planetary nebula. These shells glow beautifully before fading away. Large stars may explode as supernovae, scattering their material across space. The remains become colorful supernova remnants—bright, chaotic clouds filled with heavy elements.
-
 The Cycle of Cosmic Life
 Nebulae tell the story of the universe’s recycling system. Old stars die, spreading their elements. Nebulae gather those elements. New stars and planets form from the same materials. Every atom in your body—your bones, your blood, your breath—was once inside a nebula. You are part of this cosmic cycle, connected to stars that lived billions of years ago.
-
 Famous Nebulae Across the Sky
 Some nebulae are so beautiful that astronomers study them for years.
+* The *Orion Nebula* glows like a giant winged cloud, filled with newborn stars.
+* The *Eagle Nebula* holds the famous Pillars of Creation, towering shapes carved by starlight.
+* The *Crab Nebula* is the remains of a supernova seen from Earth a thousand years ago.
+* The *Carina Nebula* is a storm of gas and dust, one of the biggest star nurseries known.
+  Each nebula is like a chapter of the universe’s story.
+*Page 15 – The Nebula’s Endless Story*
+Nebulae are never truly finished. They appear, change, stretch, collapse, and fade over millions of years. Even now, somewhere in the universe, a new star is beginning to form inside a quiet cloud of gas. Somewhere else, a dying star is creating a nebula of its own. And you, looking up at the night sky, are watching the same universe that has been creating and recreating itself for billions of years. Nebulae remind us that creation is ongoing—one endless cosmic story told in light, dust, and time.
+`;
 
+export const quietSpacesScript = `
+The Quiet Spaces Between the Stars
+In the vast darkness of space, between the shining stars and spinning planets, there are giant clouds stretching across unimaginable distances. These clouds are not like the ones above Earth—they are made of gas, dust, and tiny particles floating softly through the emptiness. At first glance, they may seem silent and empty, but inside them, entire worlds are waiting to be born. These magical, colorful, mysterious places are called nebulae.
+What a Nebula Really Is
+A nebula is a huge cloud made mostly of hydrogen and helium, the simplest elements in the universe. Mixed into it are tiny specks of dust, smaller than grains of sand. Some nebulae are calm and gentle, spread thinly across light-years. Others are thick, glowing like cosmic fog lit from within. Each nebula holds secrets—new stars, collapsing clouds, swirling colors, and the remains of ancient suns.
+The Birth of a Nebula
+Nebulae can form in different ways. Some are born when old stars die and scatter their outer layers into space. Others come from leftover material from the early universe, drifting silently for billions of years. When powerful supernova explosions occur, they send shockwaves that push gas together, forming brand-new nebulae. Each nebula begins as a gentle cloud, waiting for gravity to whisper its next command.
+Colors Painted by the Universe
+Many nebulae shine with incredible colors—reds, blues, greens, and purples that stretch like giant murals across space. These colors come from energy. When nearby stars shine, their light excites the gas, making it glow. Hydrogen glows red, oxygen glows green or blue, and dust shines in gold and brown. No artist could paint something so huge or so beautiful; the universe paints its own masterpieces.
+The Calm Before Creation
+Inside a nebula, most places are cold and quiet. Gas floats gently, barely moving. Dust drifts like snowflakes in slow motion. But hidden inside these calm regions are tiny disturbances—areas where the gas becomes just a little thicker. Gravity notices. It begins to pull. Slowly, silently, the nebula starts to change.
+Gravity’s First Touch
+As gravity pulls the gas together, clumps begin to form. The more the gas gathers, the heavier the clump becomes, and the stronger gravity pulls. What begins as a small pocket of dense gas becomes a growing sphere. This process can take millions of years, but space is patient. The nebula doesn’t rush. It simply transforms.
+A Protostar Begins to Form
+Inside the densest clumps, temperatures rise. Pressure increases. The gas squeezes tighter and tighter. At the center, a warm core appears—a protostar, the baby stage of a star. It doesn’t shine yet, but it glows faintly with heat. Around it, the nebula swirls like a giant cradle, protecting the newborn star.
+The Star Awakens
+Millions of years pass. The core grows hotter and heavier. Finally, when the temperature reaches millions of degrees, the atoms inside begin to fuse. Hydrogen atoms merge into helium, releasing massive amounts of energy. In that instant, the protostar becomes a real star, shining its first brilliant light. The nebula around it glows even brighter as the star’s radiation spreads through it.
+Nebulae as Star Nurseries
+Nebulae that form stars are often called stellar nurseries. In these magical regions, dozens—sometimes hundreds—of stars can be born together. Some grow into giant blue stars that burn hot and fast. Others become smaller yellow stars like our Sun. Many form planets, moons, and entire solar systems. In the quiet heart of a nebula, new worlds begin.
+Planetary Systems From Dust
+The dust around a newborn star forms a spinning disk. Dust grains collide and stick together. Tiny rocks grow into mountain-sized objects. Over millions of years, these pieces build planets. Gas giants form far from the star, while rocky planets form closer. Everything—from mountains to oceans to the air we breathe—begins from the dust inside a nebula.
+When Stars Shape Their Nebulae
+Young stars can be powerful. Their light pushes gas away. Their winds carve shapes—pillars, waves, and arches. Some stars explode, sending shockwaves that sculpt the nebula into new forms. Nebulae are not still pictures—they constantly grow, stretch, twist, and reshape, like cosmic sculptures made of starlight and shadow.
+Nebulae Made From Dying Stars
+Not all nebulae create stars. Some form when stars reach the end of their lives. A small star may puff out its outer layers, forming a glowing shell called a planetary nebula. These shells glow beautifully before fading away. Large stars may explode as supernovae, scattering their material across space. The remains become colorful supernova remnants—bright, chaotic clouds filled with heavy elements.
+The Cycle of Cosmic Life
+Nebulae tell the story of the universe’s recycling system. Old stars die, spreading their elements. Nebulae gather those elements. New stars and planets form from the same materials. Every atom in your body—your bones, your blood, your breath—was once inside a nebula. You are part of this cosmic cycle, connected to stars that lived billions of years ago.
+Famous Nebulae Across the Sky
+Some nebulae are so beautiful that astronomers study them for years.
 The Orion Nebula glows like a giant winged cloud, filled with newborn stars.
-
 The Eagle Nebula holds the famous Pillars of Creation, towering shapes carved by starlight.
-
 The Crab Nebula is the remains of a supernova seen from Earth a thousand years ago.
-
 The Carina Nebula is a storm of gas and dust, one of the biggest star nurseries known.
 Each nebula is like a chapter of the universe’s story.
-
 The Nebula’s Endless Story
-Nebulae are never truly finished. They appear, change, stretch, collapse, and fade over millions of years. Even now, somewhere in the universe, a new star is beginning to form inside a quiet cloud of gas. Somewhere else, a dying star is creating a nebula of its own. And you, looking up at the night sky, are watching the same universe that has been creating and recreating itself for billions of years. Nebulae remind us that creation is ongoing—one endless cosmic story told in light, dust, and time.`;
-export const silentShadowsScript = `
-In a small observatory on a quiet hill, a young astronomer named Arin spent her nights watching the stars. But something always puzzled her. The galaxies she observed were spinning too fast—so fast that they should’ve flown apart. Yet they didn’t. Something unseen was holding everything together, a hidden force weaving through the cosmos.
+Nebulae are never truly finished. They appear, change, stretch, collapse, and fade over millions of years. Even now, somewhere in the universe, a new star is beginning to form inside a quiet cloud of gas. Somewhere else, a dying star is creating a nebula of its own. And you, looking up at the night sky, are watching the same universe that has been creating and recreating itself for billions of years. Nebulae remind us that creation is ongoing—one endless cosmic story told in light, dust, and time
+`;
 
+
+export const silentShadowsScript = `
+Silent Shadows 
+In a small observatory on a quiet hill, a young astronomer named Arin spent her nights watching the stars. But something always puzzled her. The galaxies she observed were spinning too fast—so fast that they should’ve flown apart. Yet they didn’t. Something unseen was holding everything together, a hidden force weaving through the cosmos.
 The Strange Discovery
 One night, Arin noticed something odd: stars on the edges of a distant galaxy were moving as quickly as those near the center. "This isn’t possible," she whispered. "Something… invisible must be holding them together." The thought made her heart race. What could it be?
-
 The Visitor of Shadows
 As she stared through her telescope, a faint shadowy figure appeared beside her—soft, glowing outlines, like a ghost made of starlight. "Do not be afraid," it said. "I am Umbra, a messenger of the unseen. I have come to show you what binds the universe."
-
 The Hidden Web
 Umbra touched the telescope gently, and the sky around Arin changed. Suddenly, she could see threads—thin, glowing lines—stretching between galaxies like an enormous cosmic spiderweb. "This," Umbra said, "is the Dark Matter Web. It holds galaxies together and shapes the cosmos quietly."
-
 The Galaxy Puzzle
 Umbra guided her closer to a galaxy. She saw countless stars spinning rapidly, yet the galaxy stayed whole. "Dark Matter is everywhere," Umbra explained, "even though you cannot see it. It pushes and pulls, shaping everything and keeping order in the vast universe."
-
 The Invisible Hand
-Arin reached toward one of the glowing threads. Her hand passed through it, but she felt a slight vibration—as if something powerful and ancient surrounded her. "Dark Matter doesn’t shine, doesn’t glow, but its gravity is strong. It is the universe’s invisible hand, pulling galaxies together."
-
+Arin reached toward one of the glowing threads. Her hand passed through it, but she felt a slight vibration—as if something powerful and ancient surrounded her. "Dark Matter doesn’t shine, doesn’t glow, but its gravity is strong. It is the universe’s
+invisible hand, pulling galaxies together."
 The Floating Islands
 Umbra took her deeper. She saw clusters of galaxies floating like islands connected by invisible bridges. "Without Dark Matter," Umbra said, "these islands would drift apart. The universe would be quiet… empty. It is Dark Matter that gives the universe its shape."
-
 The Dark Rivers
 Then she saw massive cosmic rivers of invisible material flowing between galaxies. "Dark Matter forms the highways of the universe," Umbra told her. "Galaxies travel along these rivers, gathering where Dark Matter gathers. Every star you see relies on this invisible structure."
-
 The Missing Piece
 Arin noticed something strange—no matter how much she looked, she never saw Dark Matter directly. "We cannot see you," she told Umbra. "How do we know you’re real?"
-
-Umbra smiled. "You know me by my influence. When something is missing, but its effects are everywhere—you understand its truth."
-
+Umbra smiled. "You know me by my influence. When something is
+missing, but its effects are everywhere—you understand its truth."
 The Silent Guardian
 Umbra showed Arin a simulation of the early universe—a swirling fog moments after the Big Bang. Dark Matter formed first, gathering into shapes that would later pull gas and stars together. "I am the skeleton of the cosmos," Umbra said softly. "Without me, nothing would form."
-
 The Dance of Gravity
 Arin watched as galaxies danced around Dark Matter centers. "So you’re the choreographer," she said with a smile. "You create the dance steps, and the stars follow. Each galaxy spins in perfect harmony because of you."
-
 The Hidden Majority
 "Your universe is mostly me," Umbra said. "Dark Matter makes up over 80 percent of all matter. Yet humans have only just begun to notice."
-
-Arin felt small—but also full of wonder. "We’ve been studying the universe for centuries," she whispered, "but we’ve been missing most of it."
-
+Arin felt small—but also full of wonder. "We’ve been studying the universe for centuries," she whispered, "but we’ve been
+missing most of it."
 The Unseen Forces
 Umbra guided her to a giant cluster where galaxies orbited something invisible. "One day," Umbra said, "your people will find a way to detect me directly. But for now, you see my footprints in the stars. You can measure my gravity, but you cannot touch me."
-
 The Return
 As dawn approached, Umbra began to fade. "Remember," he said, "the universe is more than what your eyes can see. The greatest mysteries live in the shadows. Keep watching, keep questioning. One day, you may reveal more than anyone imagined."
-
 Arin blinked—and found herself back in her observatory. The sky was quiet again, but her mind was alive with new understanding.
-
 The Silent Sky
 Between the stars, between the galaxies, she could feel the presence of something enormous and silent. She whispered, "I know you're there, Umbra. And I’ll keep searching for you."
-
 The stars seemed to shimmer, as if the shadows themselves were smiling back. And Arin knew she had glimpsed the hidden skeleton of the universe—the invisible matter that held it all together.
-\`;
+`;
 
-export const gravityWeaverScript = \`
+export const inAMallObservatoryScript = `
+Silent Shadows 
+In a small observatory on a quiet hill, a young astronomer named Arin spent her nights watching the stars. But something always puzzled her. The galaxies she observed were spinning too fast—so fast that they should’ve flown apart. Yet they didn’t. Something unseen was holding everything together, a hidden force weaving through the cosmos.
+The Strange Discovery
+One night, Arin noticed something odd: stars on the edges of a distant galaxy were moving as quickly as those near the center. "This isn’t possible," she whispered. "Something… invisible must be holding them together." The thought made her heart race. What could it be?
+The Visitor of Shadows
+As she stared through her telescope, a faint shadowy figure appeared beside her—soft, glowing outlines, like a ghost made of starlight. "Do not be afraid," it said. "I am Umbra, a messenger of the unseen. I have come to show you what binds the universe."
+The Hidden Web
+Umbra touched the telescope gently, and the sky around Arin changed. Suddenly, she could see threads—thin, glowing lines—stretching between galaxies like an enormous cosmic spiderweb. "This," Umbra said, "is the Dark Matter Web. It holds galaxies together and shapes the cosmos quietly."
+The Galaxy Puzzle
+Umbra guided her closer to a galaxy. She saw countless stars spinning rapidly, yet the galaxy stayed whole. "Dark Matter is everywhere," Umbra explained, "even though you cannot see it. It pushes and pulls, shaping everything and keeping order in the vast universe."
+The Invisible Hand
+Arin reached toward one of the glowing threads. Her hand passed through it, but she felt a slight vibration—as if something powerful and ancient surrounded her. "Dark Matter doesn’t shine, doesn’t glow, but its gravity is strong. It is the universe’s
+invisible hand, pulling galaxies together."
+The Floating Islands
+Umbra took her deeper. She saw clusters of galaxies floating like islands connected by invisible bridges. "Without Dark Matter," Umbra said, "these islands would drift apart. The universe would be quiet… empty. It is Dark Matter that gives the universe its shape."
+The Dark Rivers
+Then she saw massive cosmic rivers of invisible material flowing between galaxies. "Dark Matter forms the highways of the universe," Umbra told her. "Galaxies travel along these rivers, gathering where Dark Matter gathers. Every star you see relies on this invisible structure."
+The Missing Piece
+Arin noticed something strange—no matter how much she looked, she never saw Dark Matter directly. "We cannot see you," she told Umbra. "How do we know you’re real?"
+Umbra smiled. "You know me by my influence. When something is
+missing, but its effects are everywhere—you understand its truth."
+The Silent Guardian
+Umbra showed Arin a simulation of the early universe—a swirling fog moments after the Big Bang. Dark Matter formed first, gathering into shapes that would later pull gas and stars together. "I am the skeleton of the cosmos," Umbra said softly. "Without me, nothing would form."
+The Dance of Gravity
+Arin watched as galaxies danced around Dark Matter centers. "So you’re the choreographer," she said with a smile. "You create the dance steps, and the stars follow. Each galaxy spins in perfect harmony because of you."
+The Hidden Majority
+"Your universe is mostly me," Umbra said. "Dark Matter makes up over 80 percent of all matter. Yet humans have only just begun to notice."
+Arin felt small—but also full of wonder. "We’ve been studying the universe for centuries," she whispered, "but we’ve been
+missing most of it."
+The Unseen Forces
+Umbra guided her to a giant cluster where galaxies orbited something invisible. "One day," Umbra said, "your people will find a way to detect me directly. But for now, you see my footprints in the stars. You can measure my gravity, but you cannot touch me."
+The Return
+As dawn approached, Umbra began to fade. "Remember," he said, "the universe is more than what your eyes can see. The greatest mysteries live in the shadows. Keep watching, keep questioning. One day, you may reveal more than anyone imagined."
+Arin blinked—and found herself back in her observatory. The sky was quiet again, but her mind was alive with new understanding.
+The Silent Sky
+Between the stars, between the galaxies, she could feel the presence of something enormous and silent. She whispered, "I know you're there, Umbra. And I’ll keep searching for you."
+The stars seemed to shimmer, as if the shadows themselves were smiling back. And Arin knew she had glimpsed the hidden skeleton of the universe—the invisible matter that held it all together.
+`;
+
+
+
+export const gravityWeaverScript = `
 I. The Apple and the Silence
 The apple did not make a dramatic sound when it struck the ground.
 It landed softly in the grass, rolled once, then came to rest against a root older than the university itself.
